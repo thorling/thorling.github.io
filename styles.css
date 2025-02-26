@@ -1,0 +1,706 @@
+/* Gift title with horizontal line */
+.gift-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.gift-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ae6070;
+    border: none;
+    margin: 0 10px;
+}
+
+.gift-title-text {
+    color: #ae6070;
+    padding: 0 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}/* Base font settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+    background: url('wallpaper.png') no-repeat fixed;
+    background-size: cover;
+}
+
+/* Add an overlay to ensure text readability */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.55);
+    z-index: -1;
+}
+
+/* Typography styles */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4a471e;
+}
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: #4a471e;
+}
+
+p {
+    font-family: 'Libre Baskerville', serif;
+    color: #a18b42;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-family: 'Italianno', cursive;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    line-height: 1.2;
+}
+
+.parents-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+}
+
+.date-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.romantic-text {
+    font-family: 'Italianno', cursive;
+    font-size: 2rem;
+    color: #ae6070;
+    line-height: 1.2;
+}
+
+/* Mobile-specific typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.8rem;
+    }
+
+    .romantic-text {
+        font-size: 1.8rem;
+    }
+}
+
+.section {
+    opacity: 0;
+    transition: opacity 1s ease;
+    padding: 1rem 1rem;
+    margin: 0;
+}
+
+.section.visible {
+    opacity: 1;
+}
+
+/* Add margin only to the first section */
+.section:first-of-type {
+    margin-top: 2rem;
+}
+
+/* Updated hero section styles */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-content p {
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsiveness for hero text */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 2.5rem;
+    }
+}
+
+/* Optional: Adjust text size based on screen size */
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #4a471e;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #a18b42;
+    margin-bottom: 0.5rem;
+}
+
+.container {
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+.info-section {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+}
+
+.icon-circle {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Restore photo grid styles */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.photo-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.photo-item::after {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover::after {
+    opacity: 1;
+}
+
+.photo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ornate-decoration {
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: rotate(-45deg);
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: rotate(135deg);
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: rotate(-135deg);
+}
+
+/* New styles for the parents section */
+.parents-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0;
+}
+
+.parents-section h3 {
+    color: #4a471e;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Styles for the gift button and modal */
+.gift-button {
+    background-color: #ae6070;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gift-button:hover {
+    background-color: #c68697;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gift-modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    width: 360px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gift-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-top: -70px; /* Positioning the gift image to overlap with the top */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    width: 360px;
+    /* Adjusted for typical QR code size */
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 2000;
+}
+
+.close-modal:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal h2 {
+    margin-bottom: 0.5rem;
+}
+
+.modal p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.qr-code {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensures QR code fits without distortion */
+}
+
+.qr-container {
+    width: 280px;
+    /* Standard QR size with padding */
+    height: 280px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* New styles for RSVP button */
+.rsvp-button {
+    background-color: #ae6070;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    display: block;
+    text-decoration: none;
+    max-width: 250px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.rsvp-button:hover {
+    background-color: #c68697;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0;
+}
+
+.rsvp-text {
+    color: #4a471e;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.message-section {
+    background-color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    color: #ae6070;
+    line-height: 1.2;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .message-text {
+        font-size: 2.5rem;
+    }
+}
+
+.hero-date {
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+    z-index: 10;
+    background: rgba(174, 96, 112, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-date h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-date p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .hero-date h2 {
+        font-size: 2rem;
+    }
+
+    .hero-date p {
+        font-size: 1rem;
+    }
+}
+
+/* Photo modal styles */
+.photo-modal {
+    z-index: 2000;
+}
+
+.photo-modal-content {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0.5rem;
+    max-width: 95%;
+    width: 90%;
+    max-height: 90vh;
+    position: relative;
+    color: white;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    min-height: 200px;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mySlides img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 50%;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 10px;
+}
+
+/* Position the "prev button" to the left */
+.prev {
+    left: 10px;
+}
+
+/* On hover, add a darker background */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #ae6070;
+}
+
+/* Navigation dots container */
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.5);
+    padding: 8px 12px;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
