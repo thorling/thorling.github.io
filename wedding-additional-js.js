@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Add sparkles to section headings
+    // Simplified header animations - no character-by-character that breaks layout
     document.querySelectorAll('section h2').forEach(heading => {
       heading.style.position = 'relative';
-      heading.style.overflow = 'hidden';
-      addSparkles(heading);
+      // Remove overflow:hidden which can cause text truncation
+      heading.style.overflow = 'visible';
     });
     
     // Enhance heart icon with pulsing effect
@@ -73,30 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Add CSS for the additional animations
+  // Add CSS for the additional animations, optimized for mobile
   const style = document.createElement('style');
   style.textContent = `
-    @keyframes sparkle {
-      0%, 100% {
-        opacity: 0;
-        transform: scale(0);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkle 3s ease-in-out infinite;
-      z-index: 1;
-    }
+  
+  
     
     .letter-animation {
       display: inline-block;
@@ -128,27 +109,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    /* Additional animation for scrolling animation */
+    /* Fade in from bottom animation for text */
     .reveal-text {
-      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     
-    .reveal-text::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ae6070;
-      transform-origin: right;
-      transform: scaleX(1);
-      transition: transform 1s ease-in-out;
-    }
-    
-    .reveal-text.visible::after {
-      transform-origin: left;
-      transform: scaleX(0);
+    .reveal-text.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   `;
   document.head.appendChild(style);

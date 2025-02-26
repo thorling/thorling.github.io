@@ -183,6 +183,49 @@ p {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Add max width to hero section for desktop */
+@media (min-width: 1200px) {
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero img {
+      border-radius: 8px;
+    }
+  }
+  
+  /* Create a smooth transition from desktop to mobile */
+  @media (min-width: 769px) and (max-width: 1199px) {
+    .hero {
+      max-width: 90%;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero img {
+      border-radius: 8px;
+    }
+  }
+  
+  /* Ensure hero content is properly positioned in all screen sizes */
+  .hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 10;
+  }
+  
+  /* Ensure hero date section stays at bottom and full width */
+  .hero-date {
+    width: 100%;
+    max-width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
 /* Mobile responsiveness for hero text */
 @media (max-width: 768px) {
     .hero-content h1 {

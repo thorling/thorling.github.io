@@ -89,20 +89,81 @@
     z-index: 2;
   }
   
-  /* Animate section titles */
+  /* Animate section titles with simple fade in animation for better visibility */
   .section h2 {
-    animation: fadeUp 1s ease forwards;
+    animation: simpleFadeIn 1s ease forwards;
+    opacity: 0;
+    position: relative;
+    word-wrap: break-word;
+    color: #4a471e;
+    /* Ensure text wraps properly on mobile */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  @keyframes simpleFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add subtle underline animation for headers */
+  .section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 0;
+    height: 2px;
+    background-color: #ae6070;
+    transition: width 1s ease;
+  }
+  
+  .section.visible h2::after {
+    width: 50%;
+  }
+  
+  .section.visible h2 {
+    opacity: 1;
+  }
+  
+  /* Special animation for the main couple names header */
+  .hero-content h1 {
+    animation: fadeUp 1.5s ease forwards;
+    animation-delay: 0.5s;
     opacity: 0;
   }
   
-  .visible h2 {
-    opacity: 1;
+  /* Simple styling for uppercase headers with good contrast */
+  h2[style*="text-transform: uppercase"] {
+    color: #4a471e; 
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    font-weight: 500;
   }
   
   /* Animated elements in schedule */
   .schedule-item {
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeInRight 0.8s ease forwards;
     opacity: 0;
+    transform: translateX(50px);
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   
   .section.visible .schedule-item:nth-child(1) {
