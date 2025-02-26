@@ -1,0 +1,225 @@
+/* Text animation styles */
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glitter {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(174, 96, 112, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(174, 96, 112, 0.7);
+    }
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+  
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Apply animations to specific elements */
+  .hero-content h1 {
+    animation: fadeUp 1.5s ease forwards, glitter 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+  
+  .hero-content p {
+    animation: fadeUp 1.5s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+  
+  .heart-icon {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  .hero-date {
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+  }
+  
+  .message-text {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typewriter 3.5s steps(40, end) 1s forwards;
+    width: 0;
+  }
+  
+  .message-section::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 80%, white);
+    z-index: 2;
+  }
+  
+  /* Animate section titles */
+  .section h2 {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .visible h2 {
+    opacity: 1;
+  }
+  
+  /* Animated elements in schedule */
+  .schedule-item {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  .section.visible .schedule-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .section.visible .schedule-item:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .section.visible .schedule-item:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  
+  .section.visible .schedule-item:nth-child(4) {
+    animation-delay: 0.7s;
+  }
+  
+  .section.visible .schedule-item:nth-child(5) {
+    animation-delay: 0.9s;
+  }
+  
+  /* Animate bride and groom photos */
+  .parents-section img {
+    transition: transform 0.5s ease;
+  }
+  
+  .parents-section img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Animation for gift section */
+  .gift-button {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .section.visible .gift-button {
+    opacity: 1;
+  }
+  
+  /* RSVP animation */
+  .rsvp-button {
+    animation: fadeIn 1s ease forwards, glitter 3s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  .section.visible .rsvp-button {
+    opacity: 1;
+  }
+  
+  /* Create a floating effect for the decorative elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(45deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(45deg);
+    }
+  }
+  
+  .ornate-decoration.top-left {
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  .ornate-decoration.top-right {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .ornate-decoration.bottom-left {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .ornate-decoration.bottom-right {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+  
+  /* Animation for horizontal lines in title containers */
+  @keyframes lineDraw {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .gift-line {
+    width: 0;
+    animation: lineDraw 1.5s ease forwards;
+  }
+  
+  .section.visible .gift-line:first-child {
+    animation-delay: 0.2s;
+  }
+  
+  .section.visible .gift-line:last-child {
+    animation-delay: 0.7s;
+  }
+  
+  /* Added animation for Thai text */
+  [lang="th"], 
+  .date-time:first-of-type, 
+  .parents-section p:nth-of-type(1), 
+  .parents-section p:nth-of-type(2),
+  .gift-title-text {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .section.visible [lang="th"], 
+  .section.visible .date-time:first-of-type, 
+  .section.visible .parents-section p:nth-of-type(1), 
+  .section.visible .parents-section p:nth-of-type(2),
+  .section.visible .gift-title-text {
+    opacity: 1;
+  }
