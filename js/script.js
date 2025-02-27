@@ -151,3 +151,96 @@ window.onclick = function (event) {
         closePhotoModal();
     }
 };
+
+// Add classes to Thai text for animations and apply fonts
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if text contains Thai characters
+    function containsThai(text) {
+        return /[\u0E00-\u0E7F]/.test(text);
+    }
+    
+    // Find all text nodes and mark Thai text with lang attribute
+    function markThaiText(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            if (node.textContent.trim() && containsThai(node.textContent)) {
+                // If this is a Thai text node, wrap it with a span with lang="th"
+                if (node.parentNode && !node.parentNode.hasAttribute('lang')) {
+                    node.parentNode.setAttribute('lang', 'th');
+                    node.parentNode.classList.add('th');
+                }
+            }
+            return;
+        }
+        
+        // Skip certain elements that shouldn't have font changes
+        if (node.classList && (
+            node.classList.contains('icon-circle') || 
+            node.classList.contains('heart-icon') ||
+            node.tagName === 'SVG' ||
+            node.closest('.icon-circle') ||
+            node.closest('svg')
+        )) {
+            return;
+        }
+        
+        // If this element already has Thai text, mark it
+        if (node.textContent && containsThai(node.textContent)) {
+            node.setAttribute('lang', 'th');
+            node.classList.add('th');
+        }
+        
+        // Process child nodes
+        Array.from(node.childNodes).forEach(markThaiText);
+    }
+    
+    // Process the document body to mark Thai text
+    markThaiText(document.body);
+    
+    // Make sure hero content is using BrittanySignature
+    const heroTitle = document.querySelector('.hero-content h1');
+    if (heroTitle) {
+        heroTitle.style.fontFamily = "'BrittanySignature', 'Great Vibes', cursive";
+    }
+    
+    const heroSubtitle = document.querySelector('.hero-content p');
+    if (heroSubtitle) {
+        heroSubtitle.style.fontFamily = "'BrittanySignature', 'Italianno', cursive";
+    }
+    
+    // Add animated text reveal for specific elements
+    function createLetterSpans(element) {
+        const text = element.textContent;
+        element.textContent = '';
+        
+        for (let i = 0; i < text.length; i++) {
+            const span = document.createElement('span');
+            span.textContent = text[i];
+            span.style.animationDelay = `${0.1 + (i * 0.03)}s`;
+            span.classList.add('letter-animation');
+            element.appendChild(span);
+        }
+    }
+    
+    // Apply letter animation to main title
+    const mainTitle = document.querySelector('.hero-content h1');
+    if (mainTitle) {
+        createLetterSpans(mainTitle);
+    }
+    
+    // Enhance heart icon with pulsing effect
+    const heartIcon = document.querySelector('.heart-icon');
+    if (heartIcon) {
+        setInterval(() => {
+            heartIcon.classList.add('pulse');
+            setTimeout(() => {
+                heartIcon.classList.remove('pulse');
+            }, 1000);
+        }, 3000);
+    }
+    
+    // Add subtle animation to bride and groom names
+    const brideGroomNames = document.querySelectorAll('.parents-section p');
+    brideGroomNames.forEach((name, index) => {
+        name.style.animationDelay = `${0.3 * index}s`;
+    });
+});

@@ -1,0 +1,119 @@
+/* typography.css - Text styling for the wedding website */
+
+/* First, add the BrittanySignature font */
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('../fonts/BrittanySignature.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base typography styles - set Montserrat as the default for all text */
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Then, apply Thai font only to Thai text */
+[lang="th"],
+.th,
+*:has(> :matches([\u0E00-\u0E7F])) {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+/* Special case for hero heading - BrittanySignature */
+.hero-content h1 {
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-family: 'BrittanySignature', 'Italianno', cursive !important;
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+/* Other typography specifics */
+h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4a471e;
+}
+
+h3 {
+    font-weight: 500;
+    color: #4a471e;
+}
+
+p {
+    color: #a18b42;
+    margin-bottom: 0.5rem;
+}
+
+/* Additional style classes */
+.date-time {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.romantic-text {
+    font-family: 'BrittanySignature', 'Italianno', cursive !important;
+    font-size: 2rem;
+    color: #ae6070;
+    line-height: 1.2;
+}
+
+.message-text {
+    font-family: 'BrittanySignature', 'Italianno', cursive !important;
+    font-size: 3rem;
+    color: #ae6070;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Specific Thai sections */
+.date-time:lang(th),
+.parents-section p:lang(th),
+.gift-title-text,
+.schedule-item p:lang(th) {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+/* Mobile-specific typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.8rem;
+    }
+
+    .romantic-text {
+        font-size: 1.8rem;
+    }
+
+    .message-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}

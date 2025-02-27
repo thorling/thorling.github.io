@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Pupay & Frej's Wedding</title>
+    
     <!-- Add Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Great+Vibes&family=Italianno&family=Libre+Baskerville:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Great+Vibes&family=Italianno&family=Kanit:wght@300;400;500&family=Libre+Baskerville:ital@0;1&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="wedding-text-animations.css">
+    
+    <!-- Add custom BrittanySignature font preload -->
+    <link rel="preload" href="fonts/BrittanySignature.ttf" as="font" type="font/ttf" crossorigin>
+    
+    <!-- Modular CSS files with updated folder structure -->
+    <link rel="stylesheet" href="css/base-styles.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/hero-section.css">
+    <link rel="stylesheet" href="css/content-sections.css">
+    <link rel="stylesheet" href="css/buttons-modals.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        /* Load BrittanySignature font */
+        @font-face {
+            font-family: 'BrittanySignature';
+            src: url('fonts/BrittanySignature.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* Set default font for all elements to Montserrat */
+        body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        /* Override for Thai text - use Kanit */
+        [lang="th"], .th {
+            font-family: 'Kanit', sans-serif !important;
+        }
+        
+        /* Override for hero content - use BrittanySignature */
+        .hero-content h1, 
+        .hero-content p,
+        .romantic-text,
+        .message-text {
+            font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+        }
+    </style>
 </head>
-
 <body>
     <!-- Decorative Elements -->
     <svg class="ornate-decoration top-left" viewBox="0 0 100 100">
@@ -27,7 +67,7 @@
     <!-- Repeat SVG for other corners with different classes -->
 
     <section class="hero">
-        <img src="frame2.png" alt="Ornate frame in magical forest">
+        <img src="images/frame2.png" alt="Ornate frame in magical forest">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Pupay & Frej</h1>
@@ -38,28 +78,19 @@
                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
         </div>
-        <div class="hero-date">
-            <h2>Save the Date</h2>
-            <p>วันเสาร์ที่ 19 เมษายน 2568</p>
-            <p>Saturday, April 19, 2025</p>
+        <div class="hero-heading">
+            <h2>Let's create great memories together</h2>
         </div>
     </section>
 
     <!-- Special Message Section -->
     <section class="message-section">
         <div class="container">
-            <p class="message-text">Let's create great memories together</p>
-        </div>
-    </section>
-
-    <!-- Update info section -->
-    <section class="section" id="info">
-        <div class="container">
-            <div class="info-section">
-                <h2 style="font-size: 2.2rem; text-transform: uppercase;">THE DATE</h2>
-                <p class="date-time">วันเสาร์ที่ 19 เมษายน 2568</p>
+            <p class="message-text">
+                <!-- <h2 style="font-size: 2.2rem; text-transform: uppercase;">THE DATE</h2> -->
                 <p class="date-time">Saturday, April 19, 2025</p>
-            </div>
+                <p class="date-time">วันเสาร์ที่ 19 เมษายน 2568</p>
+            </p>
         </div>
     </section>
 
@@ -80,7 +111,7 @@
                 <div
                     style="display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; flex-wrap: nowrap; gap: 0.5rem; max-width: 100%;">
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
-                        <img src="bride.png" alt="Anya"
+                        <img src="images/bride.png" alt="Anya"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
                         <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี</p>
                         <p style="font-size: 0.9rem; color: #a18b42; word-break: break-word;">Anya Chansri</p>
@@ -92,7 +123,7 @@
                         </svg>
                     </div>
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
-                        <img src="groom.png" alt="Frej"
+                        <img src="images/groom.png" alt="Frej"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
                         <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">เฟรย์ ธอร์ลิง</p>
                         <p style="font-size: 0.9rem; color: #a18b42; word-break: break-word;">Frej Thorling</p>
@@ -106,11 +137,9 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">SCHEDULE
                 OF EVENTS</h2>
-            <div class="gift-title-container">
-                <hr class="gift-line">
-                <span class="gift-title-text">กำหนดการ</span>
-                <hr class="gift-line">
-            </div>
+                <div class="gift-title-container">
+                    <span class="gift-title-text">กำหนดการ</span>
+                </div>
             <div class="schedule-item">
                 <div class="icon-circle">☀️</div>
                 <div>
@@ -159,16 +188,16 @@
                 PHOTOS</h2>
             <div class="photo-grid">
                 <div class="photo-item" onclick="openPhotoModal(1)">
-                    <img src="1.png" alt="Couple photo 1">
+                    <img src="images/1.png" alt="Couple photo 1">
                 </div>
                 <div class="photo-item" onclick="openPhotoModal(2)">
-                    <img src="2.png" alt="Couple photo 2">
+                    <img src="images/2.png" alt="Couple photo 2">
                 </div>
                 <div class="photo-item" onclick="openPhotoModal(3)">
-                    <img src="3.png" alt="Couple photo 3">
+                    <img src="images/3.png" alt="Couple photo 3">
                 </div>
                 <div class="photo-item" onclick="openPhotoModal(4)">
-                    <img src="4.png" alt="Couple photo 4">
+                    <img src="images/4.png" alt="Couple photo 4">
                 </div>
             </div>
         </div>
@@ -181,19 +210,19 @@
 
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="1.png" alt="Couple photo 1" style="width:100%">
+                    <img src="images/1.png" alt="Couple photo 1" style="width:100%">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="2.png" alt="Couple photo 2" style="width:100%">
+                    <img src="images/2.png" alt="Couple photo 2" style="width:100%">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="3.png" alt="Couple photo 3" style="width:100%">
+                    <img src="images/3.png" alt="Couple photo 3" style="width:100%">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="4.png" alt="Couple photo 4" style="width:100%">
+                    <img src="images/4.png" alt="Couple photo 4" style="width:100%">
                 </div>
 
                 <!-- Navigation arrows -->
@@ -211,22 +240,18 @@
         </div>
     </div>
 
-    <!-- Previous sections (info, schedule) remain the same -->
-
     <!-- Wedding Gift Section -->
     <section class="section" id="gift">
         <div class="container">
             <div style="text-align: center; margin-bottom: 1.5rem;">
-                <img src="gift-box.png" alt="Gift Box" style="width: 150px; height: auto;">
+                <img src="images/gift-box.png" alt="Gift Box" style="width: 150px; height: auto;">
             </div>
 
             <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.2rem; text-transform: uppercase;">WEDDING
                 GIFT</h2>
 
             <div class="gift-title-container">
-                <hr class="gift-line">
                 <span class="gift-title-text">ส่งของขวัญให้คู่บ่าวสาว</span>
-                <hr class="gift-line">
             </div>
 
             <p style="text-align: center; margin-bottom: 1.5rem;">
@@ -246,9 +271,9 @@
             <div class="gift-content">
                 <h2>ส่งของขวัญ</h2>
                 <div class="qr-container">
-                    <img src="qrsmall.jpg" alt="Gift QR Code" class="qr-code">
+                    <img src="images/qr.jpg" alt="Gift QR Code" class="qr-code">
                 </div>
-                <p style="color: #ae6070; font-family: 'Italianno', cursive; font-size: 1.5rem;">
+                <p style="color: #ae6070; font-family: 'Italianno', cursive; font-size: 1.8rem;">
                     ขอขอบคุณในความปรารถนาดี
                 </p>
             </div>
@@ -263,9 +288,7 @@
                     R.S.V.P</h2>
 
                 <div class="gift-title-container">
-                    <hr class="gift-line">
                     <span class="gift-title-text">ตอบรับเข้าร่วมงาน</span>
-                    <hr class="gift-line">
                 </div>
 
                 <p class="rsvp-text">
@@ -297,9 +320,9 @@
         </div>
     </section>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
-    <script src="wedding-additional-js.js"></script>
+    <!-- Link to external JavaScript files with updated paths -->
+    <script src="js/script.js"></script>
+    <script src="js/wedding-additional-js.js"></script>
 </body>
 
 </html>

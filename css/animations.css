@@ -1,0 +1,354 @@
+/* animations.css - Animation styling for the wedding website */
+
+/* ===== Basic Animation Keyframes ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glitter {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(174, 96, 112, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(174, 96, 112, 0.7);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes simpleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLetters {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Hero Section Animations ===== */
+.hero-content h1 {
+    animation: fadeUp 1.5s ease forwards, glitter 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.hero-content p {
+    animation: fadeUp 1.5s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+}
+
+.heart-icon {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hero-date {
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+/* ===== Section Animations ===== */
+.section {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.section.visible {
+    opacity: 1;
+}
+
+.section h2 {
+    animation: simpleFadeIn 1s ease forwards;
+    opacity: 0;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 0;
+    height: 2px;
+    background-color: #ae6070;
+    transition: width 1s ease;
+}
+
+.section.visible h2::after {
+    width: 50%;
+}
+
+.section.visible h2 {
+    opacity: 1;
+}
+
+/* ===== Message Section Animation ===== */
+.message-text {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typewriter 3.5s steps(40, end) 1s forwards;
+    width: 0;
+}
+
+.message-section::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 80%, white);
+    z-index: 2;
+}
+
+/* ===== Schedule Items Animation ===== */
+.schedule-item {
+    animation: fadeInRight 0.8s ease forwards;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.section.visible .schedule-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.section.visible .schedule-item:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.section.visible .schedule-item:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.section.visible .schedule-item:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.section.visible .schedule-item:nth-child(5) {
+    animation-delay: 0.9s;
+}
+
+/* ===== Parents Section Animation ===== */
+.parents-section img {
+    transition: transform 0.5s ease;
+}
+
+.parents-section img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Photo Grid Animation ===== */
+.photo-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.photo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Buttons Animation ===== */
+.gift-button, .rsvp-button {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.section.visible .gift-button,
+.section.visible .rsvp-button {
+    opacity: 1;
+}
+
+.rsvp-button {
+    animation: fadeIn 1s ease forwards, glitter 3s ease-in-out infinite;
+}
+
+/* ===== Ornate Decorations Animation ===== */
+.ornate-decoration.top-left {
+    animation: float 5s ease-in-out infinite;
+}
+
+.ornate-decoration.top-right {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.ornate-decoration.bottom-left {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.ornate-decoration.bottom-right {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+/* ===== Letter Animation ===== */
+.letter-animation {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeLetters 0.5s ease forwards;
+}
+
+.pulse {
+    animation: pulse 1s cubic-bezier(.66,0,.3,1) forwards;
+}
+
+/* ===== Text Reveal Animation ===== */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Slideshow Animation ===== */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+/* ===== Thai Text Animation ===== */
+[lang="th"], 
+.date-time:first-of-type, 
+.parents-section p:nth-of-type(1), 
+.parents-section p:nth-of-type(2),
+.gift-title-text {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.section.visible [lang="th"], 
+.section.visible .date-time:first-of-type, 
+.section.visible .parents-section p:nth-of-type(1), 
+.section.visible .parents-section p:nth-of-type(2),
+.section.visible .gift-title-text {
+    opacity: 1;
+}
+
+/* Apply animation delays to sections for staggered appearance */
+#info {
+    transition-delay: 0.1s;
+}
+
+#parents {
+    transition-delay: 0.2s;
+}
+
+#schedule {
+    transition-delay: 0.3s;
+}
+
+#photos {
+    transition-delay: 0.4s;
+}
+
+#gift {
+    transition-delay: 0.5s;
+}
+
+#rsvp {
+    transition-delay: 0.6s;
+}
+
+#location {
+    transition-delay: 0.7s;
+}
+
+h2[style*="text-transform: uppercase"] {
+    color: #4a471e; 
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    font-weight: 500;
+  }

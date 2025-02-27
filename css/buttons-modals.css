@@ -1,0 +1,243 @@
+/* buttons-modals.css - Styling for interactive elements */
+
+/* Button styles */
+.gift-button, .rsvp-button {
+    background-color: #ae6070;
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gift-button:hover, .rsvp-button:hover {
+    background-color: #c68697;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rsvp-button {
+    max-width: 250px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    width: 360px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 2000;
+}
+
+.close-modal:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Gift modal specific styles */
+.gift-modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    width: 360px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gift-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-top: -70px; /* Positioning the gift image to overlap with the top */
+}
+
+.qr-code {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-container {
+    width: 280px;
+    height: 280px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Photo modal specific styles */
+.photo-modal {
+    z-index: 2000;
+}
+
+.photo-modal-content {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0.5rem;
+    max-width: 95%;
+    width: 90%;
+    max-height: 90vh;
+    position: relative;
+    color: white;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    min-height: 200px;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mySlides img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    border-radius: 50%;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 10px;
+}
+
+/* Position the "prev button" to the left */
+.prev {
+    left: 10px;
+}
+
+/* On hover, add a darker background */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #ae6070;
+}
+
+/* Navigation dots container */
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.5);
+    padding: 8px 12px;
+    border-radius: 20px;
+    z-index: 10;
+}
