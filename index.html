@@ -47,14 +47,24 @@
             font-family: 'Kanit', sans-serif !important;
         }
         
-        /* Override for hero content - use BrittanySignature */
-        .hero-content h1, 
-        .hero-content p,
+        /* UPDATED: Override to set specific fonts for different elements */
+        /* Only h1 in hero-content uses BrittanySignature */
+        .hero-content h1 {
+            font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+        }
+        
+        /* CHANGED: p in hero-content now uses Montserrat */
+        .hero-content p {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        /* Keep other elements with romantic styling using BrittanySignature */
         .romantic-text,
         .message-text {
             font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
         }
     </style>
+    
 </head>
 <body>
     <!-- Decorative Elements -->
@@ -85,12 +95,13 @@
 
     <!-- Special Message Section -->
     <section class="message-section">
+        <div class="save-date-container">
+            <div class="date-line"></div>
+            <span class="save-date-text">Save the date</span>
+            <div class="date-line"></div>
+        </div>
         <div class="container">
-            <p class="message-text">
-                <!-- <h2 style="font-size: 2.2rem; text-transform: uppercase;">THE DATE</h2> -->
-                <p class="date-time">Saturday, April 19, 2025</p>
-                <p class="date-time">วันเสาร์ที่ 19 เมษายน 2568</p>
-            </p>
+            <p class="date-time">19.04.2025</p>
         </div>
     </section>
 
@@ -98,11 +109,11 @@
     <section class="section" id="parents">
         <div class="container">
             <div class="parents-section">
-                <h2>On Behalf Of</h2>
+                <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">On Behalf Of</h2>
                 <div style="margin: 2rem 0;">
                     <h3>Bride's Parents</h3>
-                    <p>สุจินต์ จันทร์ศรี</p>
-                    <p>ฉัตรชนก จันทร์ศรี</p>
+                    <p style="font-size: 1.5rem;">คุณพ่อสุจินต์ จันทร์ศรี</p>
+                    <p style="font-size: 1.5rem;">คุณแม่ฉัตรชนก จันทร์ศรี</p>
                 </div>
                 <p class="romantic-text">
                     ขอเรียนเชิญท่านร่วมเป็นเกียรติในงานมงคลสมรสระหว่าง
@@ -113,8 +124,8 @@
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
                         <img src="images/bride.png" alt="Anya"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                        <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี</p>
-                        <p style="font-size: 0.9rem; color: #a18b42; word-break: break-word;">Anya Chansri</p>
+                            <p style="font-size: 1.8rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Anya Chansri</p>
+                            <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี (ปูเป้)</p>
                     </div>
                     <div style="display: flex; align-items: center; color: #ae6070; margin: 0 0.25rem; flex-shrink: 0;">
                         <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #ae6070;">
@@ -125,61 +136,66 @@
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
                         <img src="images/groom.png" alt="Frej"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                        <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">เฟรย์ ธอร์ลิง</p>
-                        <p style="font-size: 0.9rem; color: #a18b42; word-break: break-word;">Frej Thorling</p>
+                            <p style="font-size: 1.8rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Frej Thorling</p>
+                            <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">เฟรย์ ธอร์ลิง</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="schedule">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">SCHEDULE
-                OF EVENTS</h2>
-                <div class="gift-title-container">
-                    <span class="gift-title-text">กำหนดการ</span>
-                </div>
-            <div class="schedule-item">
-                <div class="icon-circle">☀️</div>
-                <div>
-                    <h3 style="color: #4a471e">Monk Ceremony</h3>
-                    <p>08.09 พิธีสงฆ์</p>
-                </div>
-            </div>
+<!-- Schedule section with fixed structure -->
+<section class="section" id="schedule">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">SCHEDULE OF EVENTS</h2>
+        <div class="gift-title-container">
+            <span class="gift-title-text">กำหนดการ</span>
+        </div>
 
-            <div class="schedule-item">
-                <div class="icon-circle">💝</div>
-                <div>
-                    <h3 style="color: #4a471e">Second Ceremony</h3>
-                    <p>09.09 สู่ขอ</p>
-                </div>
+        
+        
+        <div class="schedule-item">
+            <div class="schedule-icon">
+                <img src="images/chair.png" height="48px"/>
             </div>
-
-            <div class="schedule-item">
-                <div class="icon-circle">🎵</div>
-                <div>
-                    <h3 style="color: #4a471e">Third Ceremony</h3>
-                    <p>09.39 รับไหว้</p>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="icon-circle">☕</div>
-                <div>
-                    <h3 style="color: #4a471e">Lunch</h3>
-                    <p>10.00 หลั่งน้ำพระพุทธมนต์</p>
-                </div>
-            </div>
-            <div class="schedule-item">
-                <div class="icon-circle">☕</div>
-                <div>
-                    <h3 style="color: #4a471e">Lunch</h3>
-                    <p>11.00 ร่วมรับประทานอาหาร</p>
-                </div>
+            <div>
+                <h3 style="color: #4a471e">08.09</h3>
+                <p> พิธีสงฆ์</p>
             </div>
         </div>
-    </section>
+
+
+        <div class="schedule-item">
+            <div class="schedule-icon">
+                <img src="images/cake.png" height="48px"/>
+            </div>
+            <div>
+                <h3 style="color: #4a471e">09.09</h3>
+                <p>พิธีสู่ขอ</p>
+            </div>
+        </div>
+
+        <div class="schedule-item">
+            <div class="schedule-icon">
+                <img src="images/seashell.png" height="48px"/>
+            </div>
+            <div>
+                <h3 style="color: #4a471e">10.00</h3>
+                <p>พิธีหลั่งน้ำพระพุทธมนต์</p>
+            </div>
+        </div>
+        
+        <div class="schedule-item">
+            <div class="schedule-icon">
+                <img src="images/plate.png" height="48px"/>
+            </div>
+            <div>
+                <h3 style="color: #4a471e">11.00</h3>
+                <p>ร่วมรับประทานอาหาร</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Restore photo grid with clickable images that open slideshow -->
     <section class="section" id="photos">

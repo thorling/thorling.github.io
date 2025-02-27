@@ -10,7 +10,21 @@
 }
 
 /* Base typography styles - set Montserrat as the default for all text */
-body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+select,
+textarea {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -58,8 +72,8 @@ p {
 
 /* Additional style classes */
 .date-time {
-    font-size: 1.3rem;
-    font-style: italic;
+    font-size: 3rem;
+    color: white;
 }
 
 .romantic-text {
@@ -78,7 +92,6 @@ p {
 }
 
 /* Specific Thai sections */
-.date-time:lang(th),
 .parents-section p:lang(th),
 .gift-title-text,
 .schedule-item p:lang(th) {
@@ -96,7 +109,7 @@ p {
     }
 
     .romantic-text {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .message-text {
@@ -108,11 +121,11 @@ p {
     .hero-content h1 {
         font-size: 3rem;
     }
-    
+
     .hero-content p {
         font-size: 2.2rem;
     }
-    
+
     h2 {
         font-size: 2.2rem;
     }

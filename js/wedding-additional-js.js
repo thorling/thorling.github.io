@@ -123,24 +123,24 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   document.head.appendChild(style);
   
-  // Apply reveal animation to each paragraph in visible sections
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const paragraphs = entry.target.querySelectorAll('p:not(.letter-animation)');
-        paragraphs.forEach((p, index) => {
-          setTimeout(() => {
-            p.classList.add('visible');
-          }, index * 200);
-        });
-      }
-    });
-  }, { threshold: 0.2 });
+  // // Apply reveal animation to each paragraph in visible sections
+  // const revealObserver = new IntersectionObserver((entries) => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       const paragraphs = entry.target.querySelectorAll('p:not(.letter-animation)');
+  //       paragraphs.forEach((p, index) => {
+  //         setTimeout(() => {
+  //           p.classList.add('visible');
+  //         }, index * 200);
+  //       });
+  //     }
+  //   });
+  // }, { threshold: 0.2 });
   
-  // Wrap text elements with reveal-text class
-  document.querySelectorAll('.section p').forEach(p => {
-    if (!p.classList.contains('message-text')) {
-      p.classList.add('reveal-text');
-      revealObserver.observe(p.parentNode);
-    }
-  });
+  // // Wrap text elements with reveal-text class
+  // document.querySelectorAll('.section p').forEach(p => {
+  //   if (!p.classList.contains('message-text')) {
+  //     p.classList.add('reveal-text');
+  //     revealObserver.observe(p.parentNode);
+  //   }
+  // });

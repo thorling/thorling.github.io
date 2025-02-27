@@ -9,6 +9,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-bottom: 0;
+
 }
 
 .hero img {
@@ -30,10 +32,13 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    /* Move content up by adjusting margin-top or transform */
+    transform: translateY(-50px);
 }
 
+/* Update font for "Pupay & Frej" to use BrittanySignature */
 .hero-content h1 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
     font-size: 5rem;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -41,10 +46,32 @@
     color: white;
 }
 
+.hero-content h1 span{
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.hero-content p {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 2rem;
+    margin-top: 10%;
+    line-height: 1.2;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
 .hero-overlay {
     position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.2) 85%, 
+        rgba(0, 0, 0, 0) 100%);
 }
 
 .hero-heading {
@@ -56,9 +83,9 @@
     color: white;
     width: 100%;
     z-index: 10;
-    background: rgba(174, 96, 112, 0.8);
+    background-color: #C89FA5;
     backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Remove the box-shadow that creates the border effect */
 }
 
 .hero-heading h2 {
@@ -115,15 +142,20 @@
 }
 
 @media (max-width: 768px) {
+    .hero-content {
+        transform: translateY(-140px);
+    }
+    
     .hero-content h1 {
         font-size: 3.5rem;
     }
 
     .hero-content p {
-        font-size: 2.5rem;
-    }
-    .hero-heading h2 {
         font-size: 1.5rem;
+    }
+
+    .hero-heading h2 {
+        font-size: 1.3rem;
     }
 
     .hero-heading p {
@@ -132,11 +164,17 @@
 }
 
 @media (max-width: 380px) {
-    .hero-content h1 {
-        font-size: 2rem;
+    .hero-content {
+        transform: translateY(-110px);
     }
-
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-heading h2 {
+        font-size: 1.2rem;
+    }
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 }

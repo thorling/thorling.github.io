@@ -196,36 +196,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Process the document body to mark Thai text
     markThaiText(document.body);
     
-    // Make sure hero content is using BrittanySignature
-    const heroTitle = document.querySelector('.hero-content h1');
-    if (heroTitle) {
-        heroTitle.style.fontFamily = "'BrittanySignature', 'Great Vibes', cursive";
-    }
+    // // IMPORTANT: Remove any JavaScript font overrides for hero content
+    // // This allows CSS to control the fonts for hero content
+    // const heroTitle = document.querySelector('.hero-content h1');
+    // if (heroTitle) {
+    //     // Remove any inline style that sets the font-family
+    //     heroTitle.style.removeProperty('font-family');
+    // }
     
-    const heroSubtitle = document.querySelector('.hero-content p');
-    if (heroSubtitle) {
-        heroSubtitle.style.fontFamily = "'BrittanySignature', 'Italianno', cursive";
-    }
+    // const heroSubtitle = document.querySelector('.hero-content p');
+    // if (heroSubtitle) {
+    //     // Remove any inline style that sets the font-family
+    //     heroSubtitle.style.removeProperty('font-family');
+    // }
     
-    // Add animated text reveal for specific elements
-    function createLetterSpans(element) {
-        const text = element.textContent;
-        element.textContent = '';
+    // // Add animated text reveal for specific elements
+    // function createLetterSpans(element) {
+    //     const text = element.textContent;
+    //     element.textContent = '';
         
-        for (let i = 0; i < text.length; i++) {
-            const span = document.createElement('span');
-            span.textContent = text[i];
-            span.style.animationDelay = `${0.1 + (i * 0.03)}s`;
-            span.classList.add('letter-animation');
-            element.appendChild(span);
-        }
-    }
+    //     for (let i = 0; i < text.length; i++) {
+    //         const span = document.createElement('span');
+    //         span.textContent = text[i];
+    //         span.style.animationDelay = `${0.1 + (i * 0.03)}s`;
+    //         span.classList.add('letter-animation');
+    //         element.appendChild(span);
+    //     }
+    // }
     
-    // Apply letter animation to main title
-    const mainTitle = document.querySelector('.hero-content h1');
-    if (mainTitle) {
-        createLetterSpans(mainTitle);
-    }
+    // // Apply letter animation to main title WITHOUT changing its font
+    // const mainTitle = document.querySelector('.hero-content h1');
+    // if (mainTitle) {
+    //     // Save the current text content before applying animation
+    //     const originalText = mainTitle.textContent;
+    //     createLetterSpans(mainTitle);
+        
+    //     // Make sure no font-family style is applied to the spans
+    //     mainTitle.querySelectorAll('.letter-animation').forEach(span => {
+    //         span.style.removeProperty('font-family');
+    //     });
+    // }
     
     // Enhance heart icon with pulsing effect
     const heartIcon = document.querySelector('.heart-icon');
