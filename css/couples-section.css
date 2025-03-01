@@ -52,6 +52,43 @@ p.couple-thai-name {
     fill: #ae6070;
 }
 
+/* Enhanced desktop styling */
+@media (min-width: 992px) {
+    .couple-container {
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .couple-profile img {
+        width: 150px;
+        height: 150px;
+        border-width: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .couple-profile img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(174, 96, 112, 0.5);
+    }
+    
+    .couple-name {
+        font-size: 2.2rem;
+    }
+    
+    p.couple-thai-name {
+        font-size: 1.2rem;
+    }
+    
+    .heart-separator img {
+        width: 64px !important;
+        transition: transform 0.5s ease;
+    }
+    
+    .heart-separator:hover img {
+        transform: scale(1.2);
+    }
+}
+
 @media (max-width: 375px) {
     p.couple-thai-name {
         font-size: 0.8rem;

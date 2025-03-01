@@ -2,342 +2,457 @@
 
 /* Variables for consistent colors and spacing */
 :root {
-    --primary-color: #C89FA5;
-    --text-dark: #4a471e;
-    --text-muted: #666;
-    --white-transparent: rgba(255, 255, 255, 0.8);
-    --spacing-sm: 0rem;
-    --spacing-md: 0rem;
-    --spacing-lg: 0rem;
-    --spacing-xl: 2rem;
-    --border-radius: 0.5rem;
-  }
-  
-  /* Common section styles */
-  .section {
-    text-align: center;
-    margin-bottom: 0;
-  }
-  
-  /* Hero and message sections share the same background */
-  .hero-heading,
+  --primary-color: #C89FA5;
+  --text-dark: #4a471e;
+  --text-muted: #666;
+  --white-transparent: rgba(255, 255, 255, 0.8);
+  --spacing-sm: 0rem;
+  --spacing-md: 0rem;
+  --spacing-lg: 0rem;
+  --spacing-xl: 2rem;
+  --border-radius: 0.5rem;
+}
+
+/* Common section styles */
+.section {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Hero and message sections share the same background */
+.hero-heading,
+.message-section {
+  background: var(--primary-color);
+  box-shadow: none;
+  z-index: 1;
+}
+
+/* Message section specific styles */
+.message-section {
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  position: relative;
+  padding-top: var(--spacing-sm);
+  margin-top: 0;
+}
+
+/* Enhanced message section for desktop */
+@media (min-width: 992px) {
   .message-section {
-    background: var(--primary-color);
-    box-shadow: none;
-    z-index: 1;
-  }
-  
-  /* Message section specific styles */
-  .message-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    text-align: center;
-    position: relative;
-    padding-top: var(--spacing-sm);
-    margin-top: 0;
-  }
-  
-  /* Save the date container */
-  .save-date-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
-    width: 100%;
-    max-width: 400px;
+    max-width: 1200px;
     margin: 0 auto;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem var(--spacing-md);
   }
-  
-  .date-line {
-    flex: 1;
-    height: 1px;
-    background-color: white;
+}
+
+/* Save the date container */
+.save-date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Larger save-date-container for desktop */
+@media (min-width: 992px) {
+  .save-date-container {
+    max-width: 600px;
+    padding: 1.5rem var(--spacing-md) 1rem;
   }
-  
+}
+
+.date-line {
+  flex: 1;
+  height: 1px;
+  background-color: white;
+}
+
+.save-date-text {
+  font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+  color: white;
+  padding: 0 15px;
+  font-size: 2.5rem;
+  white-space: nowrap;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+/* Larger save-date-text for desktop */
+@media (min-width: 992px) {
   .save-date-text {
-    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
-    color: white;
-    padding: 0 15px;
-    font-size: 2.5rem;
-    white-space: nowrap;
-    animation: fadeIn 1.5s ease forwards;
-    animation-delay: 0.8s;
-    opacity: 0;
+    font-size: 3.5rem;
+    padding: 0 25px;
   }
+  
+  .date-time {
+    font-size: 4rem !important;
+  }
+}
+
 /* More aggressive fix for schedule-item width and padding issues */
 
 /* First, ensure the container has proper width */
 #schedule .container {
-  width: 100%;
-  max-width: 28rem;
-  padding: 0 1rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow: hidden; /* Prevent any children from creating horizontal scroll */
+width: 100%;
+max-width: 28rem;
+padding: 0 1rem;
+margin: 0 auto;
+box-sizing: border-box;
+overflow: hidden; /* Prevent any children from creating horizontal scroll */
+}
+
+/* Desktop improvements for schedule section */
+@media (min-width: 992px) {
+#schedule .container {
+  max-width: 60rem;
+}
+
+#schedule .schedule-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.schedule-item {
+  flex: 0 0 calc(50% - 2rem);
+  max-width: calc(50% - 2rem);
+}
 }
 
 /* Reset and fix the schedule-item styles */
 .schedule-item {
-  display: flex;
-  align-items: flex-start;
-  width: 75%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-  /* Force-constrain width to prevent overflow */
-  max-width: 100%;
-  overflow: hidden;
+display: flex;
+align-items: flex-start;
+width: 75%;
+margin-bottom: 1rem;
+padding: 1rem;
+/* background-color: rgba(255, 255, 255, 0.8); */
+border-radius: 0.5rem;
+box-sizing: border-box;
+/* Force-constrain width to prevent overflow */
+max-width: 100%;
+overflow: hidden;
 }
 
 /* Adjust the icon to have fixed dimensions */
 .schedule-icon {
-  flex: 0 0 48px;
-  min-width: 48px;
-  width: 48px;
-  height: 48px;
-  margin-right: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+flex: 0 0 48px;
+min-width: 48px;
+width: 48px;
+height: 48px;
+margin-right: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Desktop improvements for schedule icons */
+@media (min-width: 992px) {
+.schedule-icon {
+  flex: 0 0 64px;
+  min-width: 64px;
+  width: 64px;
+  height: 64px;
+}
+
+.schedule-icon img {
+  height: 64px !important;
+}
 }
 
 /* Ensure text container is properly constrained */
 .schedule-item > div:nth-child(2) {
-  flex: 1;
-  min-width: 0; /* Critical for text overflow */
-  max-width: calc(100% - 60px); /* Account for icon width + margin */
-  width: auto;
-  overflow: hidden;
-  padding-right: 0.5rem;
+flex: 1;
+min-width: 0; /* Critical for text overflow */
+max-width: calc(100% - 60px); /* Account for icon width + margin */
+width: auto;
+overflow: hidden;
+padding-right: 0.5rem;
 }
 
 /* Ensure text within schedule items doesn't overflow */
 .schedule-item h3,
 .schedule-item span {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  word-wrap: break-word;
-  word-break: break-word;
-  font-size: 1.2rem;
+max-width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: normal;
+word-wrap: break-word;
+word-break: break-word;
+font-size: 1.2rem;
+}
+
+/* Desktop improvements for schedule text */
+@media (min-width: 992px) {
+.schedule-item h3 {
+  font-size: 2rem;
+}
+
+.schedule-item span {
+  font-size: 1.5rem;
+}
 }
 
 .schedule-item div{
-  line-height: 1.5;
+line-height: 1.5;
 }
 .schedule-item span{
-  font-family: 'Kanit', sans-serif !important;
+font-family: 'Kanit', sans-serif !important;
 }
 
 /* Fix for mobile view */
 @media (max-width: 768px) {
-  .schedule-item {
-    padding: 0.8rem;
-  }
-  
-  .schedule-icon {
-    margin-right: 0.8rem;
-  }
+.schedule-item {
+  padding: 0.8rem;
 }
-  
-  /* Parents and RSVP sections have common styles */
+
+.schedule-icon {
+  margin-right: 0.8rem;
+}
+}
+
+/* Parents and RSVP sections have common styles */
+.parents-section,
+.rsvp-section {
+  text-align: center;
+  /* background-color: var(--white-transparent); */
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  margin-bottom: 0;
+}
+
+/* Desktop improvements for parents and RSVP sections */
+@media (min-width: 992px) {
   .parents-section,
   .rsvp-section {
-    text-align: center;
-    /* background-color: var(--white-transparent); */
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    margin-bottom: 0;
+    padding: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
-  
-  .parents-section h3 {
-    color: var(--text-dark);
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
-  }
-  
-  .rsvp-text {
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
-  }
-  
+}
+
+.parents-section h3 {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.rsvp-text {
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+}
+
 /* Mobile-First Photo Grid Styling */
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    margin: 0 auto;
-    max-width: 450px; /* Limit max width for better mobile display */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin: 0 auto;
+  max-width: 450px; /* Limit max width for better mobile display */
 }
 
 .photo-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 1;
 }
 
 /* Make featured image take full width on mobile */
 .photo-item.featured {
-    grid-column: span 2;
-    aspect-ratio: 4/3; /* Landscape orientation for feature */
+  grid-column: span 2;
+  aspect-ratio: 4/3; /* Landscape orientation for feature */
 }
 
 /* Medium sized image takes up more space */
 .photo-item.medium {
-    grid-column: span 2;
-    aspect-ratio: 3/2; /* Slightly landscape orientation */
+  grid-column: span 2;
+  aspect-ratio: 3/2; /* Slightly landscape orientation */
 }
 
 .photo-item.small {
-    aspect-ratio: 1; /* Square for small images */
+  aspect-ratio: 1; /* Square for small images */
 }
 
 .photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .photo-item:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .photo-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .photo-item:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Magnifying glass icon on hover */
 .photo-item::before {
-    content: '🔍';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    color: white;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  content: '🔍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: white;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .photo-item:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .photo-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Sequential animation for items */
 .section.visible .photo-item:nth-child(1) {
-    transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 .section.visible .photo-item:nth-child(2) {
-    transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 .section.visible .photo-item:nth-child(3) {
-    transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 .section.visible .photo-item:nth-child(4) {
-    transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 .section.visible .photo-item:nth-child(5) {
-    transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 .section.visible .photo-item:nth-child(6) {
-    transition-delay: 0.6s;
+  transition-delay: 0.6s;
 }
 
 /* Tablet and larger screens */
 @media (min-width: 600px) {
-    .photo-grid {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 650px;
-    }
-    
-    .photo-item.featured {
-        grid-column: span 4;
-        aspect-ratio: 16/9;
-    }
-    
-    .photo-item.medium {
-        grid-column: span 2;
-    }
+  .photo-grid {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 650px;
+  }
+  
+  .photo-item.featured {
+      grid-column: span 4;
+      aspect-ratio: 16/9;
+  }
+  
+  .photo-item.medium {
+      grid-column: span 2;
+  }
 }
 
 /* Desktop screens */
 @media (min-width: 992px) {
-    .photo-grid {
-        grid-template-columns: repeat(6, 1fr);
-        max-width: 850px;
-        gap: 0.8rem;
-    }
-    
-    .photo-item.featured {
-        grid-column: span 3;
-        grid-row: span 2;
-        aspect-ratio: 3/4; /* More vertical on desktop */
-    }
-    
-    .photo-item.medium {
-        grid-column: span 3;
-    }
-}
-  
-  /* Location section */
-  #location iframe {
-    width: 100%;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 450px;
+  .photo-grid {
+      grid-template-columns: repeat(6, 1fr);
+      max-width: 1000px;
+      gap: 1rem;
   }
   
-  /* Media Queries */
-  @media (max-width: 768px) {
-    /* .schedule-item {
-      padding: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    
-    .schedule-icon {
-      width: 50px;
-      min-width: 50px;
-      height: 50px;
-    } */
-    
-    .parents-section, 
-    .rsvp-section {
-      padding: var(--spacing-lg);
-    }
+  .photo-item.featured {
+      grid-column: span 3;
+      grid-row: span 2;
+      aspect-ratio: 3/4; /* More vertical on desktop */
   }
   
-  @media (max-width: 480px) {
-    .save-date-text {
+  .photo-item.medium {
+      grid-column: span 3;
+  }
+  
+  /* Enhanced photo hover effects for desktop */
+  .photo-item:hover img {
+      transform: scale(1.1);
+  }
+  
+  .photo-item::before {
       font-size: 2rem;
-      padding: 0 10px;
-    }
   }
+}
+
+/* Location section */
+#location iframe {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 450px;
+}
+
+/* Desktop improvements for location section */
+@media (min-width: 992px) {
+  #location .container {
+    max-width: 1000px;
+  }
+  
+  #location iframe {
+    height: 600px;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .location-venue, .location-building {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* .schedule-item {
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .schedule-icon {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+  } */
+  
+  .parents-section, 
+  .rsvp-section {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .save-date-text {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+}

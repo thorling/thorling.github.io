@@ -93,6 +93,7 @@
     backdrop-filter: blur(5px);
     box-shadow: none; /* Remove the box-shadow that creates the border effect */
     /* Ensure consistent display across devices */
+    padding: 1rem 0;
 }
 
 .hero-heading h2 {
@@ -100,6 +101,7 @@
     font-size: 1.3rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
 }
 
 .hero-heading p {
@@ -123,15 +125,35 @@
         max-width: 1200px;
         margin: 0 auto;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        height: 90vh; /* Slightly shorter for better desktop experience */
     }
     
     .hero img {
-        border-radius: 8px;
+        border-radius: 8px 8px 0 0;
     }
 
     .hero-heading {
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
+        padding: 1.5rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 7rem; /* Larger font for desktop */
+    }
+    
+    .hero-content p {
+        font-size: 2.5rem; /* Larger font for desktop */
+    }
+    
+    .heart-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .hero-heading h2 {
+        font-size: 1.8rem;
     }
 }
 
@@ -140,10 +162,28 @@
         max-width: 90%;
         margin: 0 auto;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        height: 85vh;
     }
     
     .hero img {
-        border-radius: 8px;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 6rem;
+    }
+    
+    .hero-content p {
+        font-size: 2.2rem;
+    }
+    
+    .hero-heading {
+        padding: 1.25rem 0;
+    }
+    
+    .hero-heading h2 {
+        font-size: 1.6rem;
     }
 }
 

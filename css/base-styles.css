@@ -5,179 +5,202 @@
 
 /* ===== RESET & BASE STYLES ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  line-height: 1.8;
+  background: url('../images/wallpaper.jpg') no-repeat fixed;
+  background-size: cover;
+}
+
+/* Different background image for desktop screens */
+@media (min-width: 992px) {
   body {
-    font-family: 'Libre Baskerville', serif;
-    line-height: 1.8;
-    background: url('../images/wallpaper.jpg') no-repeat fixed;
+    background: url('../images/wallpaperdesktop.jpg') no-repeat fixed;
     background-size: cover;
   }
-  
-  /* Background overlay for readability */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.55);
-    z-index: -1;
-  }
-  
-  /* ===== TYPOGRAPHY ===== */
-  h1, h2, h3, p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-  
-  /* ===== LAYOUT ===== */
+}
+
+/* Background overlay for readability */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  z-index: -1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* Wider container for desktop */
+@media (min-width: 992px) {
   .container {
-    width: 100%;
-    max-width: 28rem;
-    padding: 0 1rem;
-    margin: 0 auto;
+    max-width: 60rem;
   }
-  
-  .section {
-    opacity: 0;
-    transition: opacity 1s ease;
-    padding: 1rem;
-    margin: 0;
-  }
-  
-  .section.visible {
-    opacity: 1;
-  }
-  
-  .section:first-of-type {
-    margin-top: 2rem;
-  }
-  
-  /* ===== DECORATIVE ELEMENTS ===== */
+}
+
+.section {
+  opacity: 0;
+  transition: opacity 1s ease;
+  padding: 1rem;
+  margin: 0;
+}
+
+.section.visible {
+  opacity: 1;
+}
+
+.section:first-of-type {
+  margin-top: 2rem;
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.ornate-decoration {
+  position: fixed;
+  width: 6rem;
+  height: 6rem;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Larger decorations for desktop */
+@media (min-width: 992px) {
   .ornate-decoration {
-    position: fixed;
-    width: 6rem;
-    height: 6rem;
-    opacity: 0.3;
-    pointer-events: none;
+    width: 10rem;
+    height: 10rem;
   }
-  
-  .top-left {
-    top: 0;
-    left: 0;
-    transform: rotate(45deg);
-  }
-  
-  .top-right {
-    top: 0;
-    right: 0;
-    transform: rotate(-45deg);
-  }
-  
-  .bottom-left {
-    bottom: 0;
-    left: 0;
-    transform: rotate(135deg);
-  }
-  
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-    transform: rotate(-135deg);
-  }
-  
-  /* ===== GIFT SECTION ===== */
-  .gift-title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1.5rem 0;
-  }
-  
-  .gift-title-text {
-    color: #ae6070;
-    padding: 0 10px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    white-space: nowrap;
-  }
-  
-  /* ===== HERO SECTION ===== */
-  .hero {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  /* ===== SCHEDULE SECTION ===== */
-  .schedule-item {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .schedule-icon {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    margin-right: 1rem;
-  }
-  
-  .schedule-item > div:nth-child(2) {
-    flex: 1;
-    min-width: 0; /* Critical for flex items with text overflow */
-    overflow: hidden;
-    width: calc(100% - 60px);
-  }
-  
-  /* ===== PHOTO GRID ===== */
-  .photo-grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  
-  /* ===== MODAL ===== */
-  .modal-content {
-    width: 95%;
-    max-width: 360px;
-    box-sizing: border-box;
-  }
-  
-  /* ===== MEDIA ELEMENTS ===== */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  iframe {
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  /* ===== LANGUAGE SPECIFIC ===== */
-  [lang="th"], 
-  .schedule-item span,
-  .schedule-item p {
-    word-break: break-all; /* Force breaks anywhere for Thai text */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    display: block;
-    width: 100%;
-  }
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(135deg);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-135deg);
+}
+
+/* ===== GIFT SECTION ===== */
+.gift-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.gift-title-text {
+  color: #ae6070;
+  padding: 0 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* ===== SCHEDULE SECTION ===== */
+.schedule-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.schedule-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+}
+
+.schedule-item > div:nth-child(2) {
+  flex: 1;
+  min-width: 0; /* Critical for flex items with text overflow */
+  overflow: hidden;
+  width: calc(100% - 60px);
+}
+
+/* ===== PHOTO GRID ===== */
+.photo-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+/* ===== MODAL ===== */
+.modal-content {
+  width: 95%;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+
+/* ===== MEDIA ELEMENTS ===== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ===== LANGUAGE SPECIFIC ===== */
+[lang="th"], 
+.schedule-item span,
+.schedule-item p {
+  word-break: break-all; /* Force breaks anywhere for Thai text */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  display: block;
+  width: 100%;
+}
