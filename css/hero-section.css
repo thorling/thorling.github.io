@@ -11,6 +11,8 @@
     justify-content: center;
     overflow: hidden;
     margin-bottom: 0;
+    /* Make sure all content is visible within the viewport */
+    max-height: 100vh;
 }
 
 .hero img {
@@ -76,9 +78,9 @@
 
 .hero-heading {
     position: absolute;
-    bottom: 0rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
     color: white;
     width: 100%;
@@ -86,6 +88,8 @@
     background-color: #C89FA5;
     backdrop-filter: blur(5px);
     box-shadow: none; /* Remove the box-shadow that creates the border effect */
+    /* Ensure consistent display across devices */
+    padding: 10px 0;
 }
 
 .hero-heading h2 {
@@ -142,8 +146,18 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 90vh; /* Slightly reduced to ensure heading visibility */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribute space between content and heading */
+    }
+    
     .hero-content {
-        transform: translateY(-140px);
+        transform: translateY(0); /* Remove negative transform that was pushing content up */
+        padding-top: 15vh; /* Add padding at top instead */
+        padding-bottom: 50px; /* Add space at bottom */
     }
     
     .hero-content h1 {
@@ -156,6 +170,8 @@
 
     .hero-heading h2 {
         font-size: 1.3rem;
+        margin: 0.5rem 0; /* Adjust margins to ensure visibility */
+        padding: 0.5rem; /* Add padding for better touch targets */
     }
 
     .hero-heading p {
