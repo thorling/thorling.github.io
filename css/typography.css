@@ -90,12 +90,8 @@ p {
 }
 
 .parents-section p {
-    font-size: 0.9rem;
-}
-
-.couple-thai-name p{
     font-size: 1rem;
-    }
+}
 
 /* Additional style classes */
 .date-time {
@@ -125,6 +121,12 @@ p {
     font-family: 'Kanit', sans-serif !important;
 }
 
+.parents-section p.couple-name{
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+}
+
+
+
 /* Mobile-specific typography */
 @media (max-width: 768px) {
     h1 {
@@ -150,7 +152,7 @@ p {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 430px) {
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -162,5 +164,17 @@ p {
     
     .hero-heading h2 {
         font-size: 1.2rem;
+    }
+
+    .parents-section p.romantic-text{
+        font-size: 0.9rem;
+    
+    }
+}
+
+@media (max-width: 375px) {
+    .parents-section p.romantic-text{
+        font-size: 0.8rem;
+    
     }
 }

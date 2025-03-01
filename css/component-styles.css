@@ -17,25 +17,23 @@
     margin-top: 1.5rem;
     font-style: italic;
     color: #ae6070;
+    font-family: 'Kanit', sans-serif !important;
+
 }
 
 /* RSVP section text */
 .rsvp-text {
     text-align: center;
     margin-bottom: 1.5rem;
+    font-family: 'Kanit', sans-serif !important;
 }
 
 /* Gift message */
 .gift-message {
     text-align: center;
     margin-bottom: 1.5rem;
-}
+    font-family: 'Kanit', sans-serif !important;
 
-/* Italianno text styling in gift modal */
-.gift-thank-you {
-    color: #ae6070;
-    font-family: 'Italianno', cursive;
-    font-size: 1.8rem;
 }
 
 /* General center alignment for text paragraphs */
@@ -51,5 +49,10 @@
     
     .gift-thank-you {
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 360px) {
+    .rsvp-text {
+        font-size: 0.9rem;
     }
 }

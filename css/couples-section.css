@@ -30,11 +30,10 @@
     font-size: 1.6rem;
     color: #a18b42;
     word-break: break-word;
-    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
 }
 
-.couple-thai-name {
-    font-size: 1rem;
+p.couple-thai-name {
+    font-size: 0.9rem;
     color: #4a471e;
     word-break: break-word;
 }
@@ -51,4 +50,10 @@
     width: 24px;
     height: 24px;
     fill: #ae6070;
+}
+
+@media (max-width: 360px) {
+    p.couple-thai-name {
+        font-size: 0.8rem;
+    }
 }

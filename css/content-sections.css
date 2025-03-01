@@ -82,7 +82,7 @@
   width: 75%;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
   border-radius: 0.5rem;
   box-sizing: border-box;
   /* Force-constrain width to prevent overflow */
@@ -121,10 +121,14 @@
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
+  font-size: 1.2rem;
 }
 
 .schedule-item div{
   line-height: 1.5;
+}
+.schedule-item span{
+  font-family: 'Kanit', sans-serif !important;
 }
 
 /* Fix for mobile view */
@@ -142,7 +146,7 @@
   .parents-section,
   .rsvp-section {
     text-align: center;
-    background-color: var(--white-transparent);
+    /* background-color: var(--white-transparent); */
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
     margin-bottom: 0;
@@ -150,7 +154,7 @@
   
   .parents-section h3 {
     color: var(--text-dark);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
   }
   

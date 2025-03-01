@@ -23,7 +23,7 @@
 }
 
 .location-venue {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Kanit', sans-serif !important;
     font-size: 1.3rem;
     color: #4a471e;
     margin-bottom: 0.5rem;
@@ -31,7 +31,7 @@
 }
 
 .location-building {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Kanit', sans-serif !important;
     font-size: 1.3rem;
     color: #4a471e;
     text-align: center;
@@ -53,5 +53,11 @@
 @media (max-width: 480px) {
     .section h2 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .section h2 {
+        font-size: 1.4rem;
     }
 }
