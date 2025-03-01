@@ -1,40 +1,59 @@
-/* content-sections.css - Styling for main content sections */
+/* content-sections.css - Refactored styling for wedding website */
 
-.hero-heading,
-.message-section {
-    background: #C89FA5; /* Ensure they have the same exact background color */
+/* Variables for consistent colors and spacing */
+:root {
+    --primary-color: #C89FA5;
+    --text-dark: #4a471e;
+    --text-muted: #666;
+    --white-transparent: rgba(255, 255, 255, 0.8);
+    --spacing-sm: 0rem;
+    --spacing-md: 0rem;
+    --spacing-lg: 0rem;
+    --spacing-xl: 2rem;
+    --border-radius: 0.5rem;
+  }
+  
+  /* Common section styles */
+  .section {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  /* Hero and message sections share the same background */
+  .hero-heading,
+  .message-section {
+    background: var(--primary-color);
     box-shadow: none;
-}
-/* Message section */
-.message-section {
-    background-color: #C89FA5;
-    padding: 1.5rem 1rem;
+    z-index: 1;
+  }
+  
+  /* Message section specific styles */
+  .message-section {
+    padding: var(--spacing-lg) var(--spacing-md);
     text-align: center;
     position: relative;
-    z-index: 1;
-    box-shadow: none; /* Remove box-shadow that might create border effect */
-    margin-top: 0; /* Ensure no gap between sections */
-    padding-top: 0.5rem;
+    padding-top: var(--spacing-sm);
     margin-top: 0;
-}
-
-.save-date-container {
+  }
+  
+  /* Save the date container */
+  .save-date-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 1rem 0.5rem;
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-}
-
-.date-line {
+  }
+  
+  .date-line {
     flex: 1;
     height: 1px;
     background-color: white;
-}
-
-.save-date-text {
+  }
+  
+  .save-date-text {
     font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
     color: white;
     padding: 0 15px;
@@ -43,130 +62,126 @@
     animation: fadeIn 1.5s ease forwards;
     animation-delay: 0.8s;
     opacity: 0;
-}
-
-@media (max-width: 480px) {
-    .save-date-text {
-        font-size: 2rem;
-        padding: 0 10px;
-    }
-}
-
-/* Information section */
-.info-section {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-/* Schedule section */
-/* Updated schedule section styles */
-.schedule-item {
+  }
+  
+  /* Schedule section styles */
+  .schedule-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 0.5rem;
-}
-
-/* Image container with fixed width to ensure consistent alignment */
-.schedule-icon {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background-color: var(--white-transparent);
+    border-radius: var(--border-radius);
+  }
+  
+  .schedule-icon {
     width: 60px;
-    min-width: 60px; /* Ensures the width doesn't shrink */
+    min-width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1.5rem;
-}
-
-/* Ensures images are centered within their container */
-.schedule-icon img {
+    margin-right: 0;
+  }
+  
+  .schedule-icon img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-}
-
-/* Text content container */
-.schedule-text {
+  }
+  
+  .schedule-text {
     flex: 1;
-}
-
-/* Typography for schedule items */
-.schedule-item h3 {
+  }
+  
+  .schedule-item h3 {
     font-size: 2rem;
-}
-
-.schedule-item p {
+  }
+  
+  .schedule-item p {
     margin: 0;
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.5rem;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .schedule-item {
-        padding: 1.2rem;
-        margin-bottom: 1.2rem;
-    }
-    
-    .schedule-icon {
-        width: 50px;
-        min-width: 50px;
-        height: 50px;
-        margin-right: 3rem;
-    }
-}
-
-/* Parents section */
-.parents-section {
+  }
+  
+  /* Parents and RSVP sections have common styles */
+  .parents-section,
+  .rsvp-section {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 0.5rem;
+    background-color: var(--white-transparent);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
     margin-bottom: 0;
-}
-
-.parents-section h3 {
-    color: #4a471e;
+  }
+  
+  .parents-section h3 {
+    color: var(--text-dark);
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-/* Photo grid */
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .rsvp-text {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+  }
+  
+/* Mobile-First Photo Grid Styling */
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 0.6rem;
+    margin: 0 auto;
+    max-width: 450px; /* Limit max width for better mobile display */
 }
 
 .photo-item {
-    aspect-ratio: 1;
+    position: relative;
     overflow: hidden;
     border-radius: 0.5rem;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
     cursor: pointer;
-    position: relative;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    aspect-ratio: 1;
+}
+
+/* Make featured image take full width on mobile */
+.photo-item.featured {
+    grid-column: span 2;
+    aspect-ratio: 4/3; /* Landscape orientation for feature */
+}
+
+/* Medium sized image takes up more space */
+.photo-item.medium {
+    grid-column: span 2;
+    aspect-ratio: 3/2; /* Slightly landscape orientation */
+}
+
+.photo-item.small {
+    aspect-ratio: 1; /* Square for small images */
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
 }
 
 .photo-item::after {
-    content: '🔍';
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -175,53 +190,116 @@
     opacity: 1;
 }
 
+/* Magnifying glass icon on hover */
+.photo-item::before {
+    content: '🔍';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.photo-item:hover::before {
+    opacity: 1;
+}
+
 .photo-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.photo-item img {
+/* Sequential animation for items */
+.section.visible .photo-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.section.visible .photo-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.section.visible .photo-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.section.visible .photo-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.section.visible .photo-item:nth-child(5) {
+    transition-delay: 0.5s;
+}
+.section.visible .photo-item:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 600px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 650px;
+    }
+    
+    .photo-item.featured {
+        grid-column: span 4;
+        aspect-ratio: 16/9;
+    }
+    
+    .photo-item.medium {
+        grid-column: span 2;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 992px) {
+    .photo-grid {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 850px;
+        gap: 0.8rem;
+    }
+    
+    .photo-item.featured {
+        grid-column: span 3;
+        grid-row: span 2;
+        aspect-ratio: 3/4; /* More vertical on desktop */
+    }
+    
+    .photo-item.medium {
+        grid-column: span 3;
+    }
+}
+  
+  /* Location section */
+  #location iframe {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* RSVP section */
-.rsvp-section {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    margin-bottom: 0;
-}
-
-.rsvp-text {
-    color: #4a471e;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
-
-/* Location section */
-#location iframe {
-    width: 100%;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 450px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
     .schedule-item {
-        padding: 1.2rem;
-        margin-bottom: 1.2rem;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
     }
     
-    .icon-circle {
-        width: 3rem;
-        height: 3rem;
+    .schedule-icon {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
     }
     
-    .parents-section, .rsvp-section {
-        padding: 1.5rem;
+    .parents-section, 
+    .rsvp-section {
+      padding: var(--spacing-lg);
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .save-date-text {
+      font-size: 2rem;
+      padding: 0 10px;
+    }
+  }

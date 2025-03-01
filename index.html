@@ -124,8 +124,9 @@
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
                         <img src="images/bride.png" alt="Anya"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                            <p style="font-size: 1.8rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Anya Chansri</p>
-                            <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี (ปูเป้)</p>
+                            <p style="font-size: 1.6rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Anya Chansri</p>
+                            <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี</p>
+                            <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">(ปูเป้)</p>
                     </div>
                     <div style="display: flex; align-items: center; color: #ae6070; margin: 0 0.25rem; flex-shrink: 0;">
                         <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #ae6070;">
@@ -136,7 +137,7 @@
                     <div style="text-align: center; flex-shrink: 1; min-width: 0;">
                         <img src="images/groom.png" alt="Frej"
                             style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                            <p style="font-size: 1.8rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Frej Thorling</p>
+                            <p style="font-size: 1.6rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Frej Thorling</p>
                             <p style="font-size: 1.1rem; color: #4a471e; word-break: break-word;">เฟรย์ ธอร์ลิง</p>
                     </div>
                 </div>
@@ -144,117 +145,134 @@
         </div>
     </section>
 
-<!-- Schedule section with fixed structure -->
-<section class="section" id="schedule">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">SCHEDULE OF EVENTS</h2>
-        <div class="gift-title-container">
-            <span class="gift-title-text">กำหนดการ</span>
-        </div>
-
-        
-        
-        <div class="schedule-item">
-            <div class="schedule-icon">
-                <img src="images/chair.png" height="48px"/>
-            </div>
-            <div>
-                <h3 style="color: #4a471e">08.09</h3>
-                <p> พิธีสงฆ์</p>
-            </div>
-        </div>
-
-
-        <div class="schedule-item">
-            <div class="schedule-icon">
-                <img src="images/cake.png" height="48px"/>
-            </div>
-            <div>
-                <h3 style="color: #4a471e">09.09</h3>
-                <p>พิธีสู่ขอ</p>
-            </div>
-        </div>
-
-        <div class="schedule-item">
-            <div class="schedule-icon">
-                <img src="images/seashell.png" height="48px"/>
-            </div>
-            <div>
-                <h3 style="color: #4a471e">10.00</h3>
-                <p>พิธีหลั่งน้ำพระพุทธมนต์</p>
-            </div>
-        </div>
-        
-        <div class="schedule-item">
-            <div class="schedule-icon">
-                <img src="images/plate.png" height="48px"/>
-            </div>
-            <div>
-                <h3 style="color: #4a471e">11.00</h3>
-                <p>ร่วมรับประทานอาหาร</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Restore photo grid with clickable images that open slideshow -->
-    <section class="section" id="photos">
+    <section class="section" id="schedule">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem; text-transform: uppercase;">OUR
-                PHOTOS</h2>
-            <div class="photo-grid">
-                <div class="photo-item" onclick="openPhotoModal(1)">
-                    <img src="images/1.png" alt="Couple photo 1">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 1.7rem; text-transform: uppercase;">SCHEDULE OF EVENTS</h2>
+            <div class="gift-title-container">
+                <span class="gift-title-text">กำหนดการ</span>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-icon">
+                    <img src="images/chair.png" height="48px"/>
                 </div>
-                <div class="photo-item" onclick="openPhotoModal(2)">
-                    <img src="images/2.png" alt="Couple photo 2">
+                <div style="min-width: 0; flex: 1; overflow: hidden;">
+                    <h3 style="color: #4a471e">08.09</h3>
+                    <span style="display: block; color: #a18b42;"> พิธีสงฆ์</span>
                 </div>
-                <div class="photo-item" onclick="openPhotoModal(3)">
-                    <img src="images/3.png" alt="Couple photo 3">
+            </div>
+    
+            <div class="schedule-item">
+                <div class="schedule-icon">
+                    <img src="images/cake.png" height="48px"/>
                 </div>
-                <div class="photo-item" onclick="openPhotoModal(4)">
-                    <img src="images/4.png" alt="Couple photo 4">
+                <div style="min-width: 0; flex: 1; overflow: hidden;">
+                    <h3 style="color: #4a471e">09.09</h3>
+                    <span style="display: block; color: #a18b42;">พิธีสู่ขอ</span>
+                </div>
+            </div>
+    
+            <div class="schedule-item">
+                <div class="schedule-icon">
+                    <img src="images/seashell.png" height="48px"/>
+                </div>
+                <div style="min-width: 0; flex: 1; overflow: hidden;">
+                    <h3 style="color: #4a471e">10.00</h3>
+                    <span style="display: block; color: #a18b42;">พิธีหลั่งน้ำพระพุทธมนต์</span>
+                </div>
+            </div>
+            
+            <div class="schedule-item">
+                <div class="schedule-icon">
+                    <img src="images/plate.png" height="48px"/>
+                </div>
+                <div style="min-width: 0; flex: 1; overflow: hidden;">
+                    <h3 style="color: #4a471e">11.00</h3>
+                    <span style="display: block; color: #a18b42;">ร่วมรับประทานอาหาร</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal Slideshow -->
-    <div class="modal photo-modal" id="photoModal">
-        <div class="modal-content photo-modal-content">
-            <button class="close-modal" onclick="closePhotoModal()">&times;</button>
-
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="images/1.png" alt="Couple photo 1" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/2.png" alt="Couple photo 2" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/3.png" alt="Couple photo 3" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/4.png" alt="Couple photo 4" style="width:100%">
-                </div>
-
-                <!-- Navigation arrows -->
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
-                <!-- Navigation dots -->
-                <div class="dots-container" style="text-align:center;">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                </div>
+<!-- Mobile-First Photo Grid Section with 6 images -->
+<section class="section" id="photos">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem; text-transform: uppercase;">OUR PHOTOS</h2>
+        <div class="photo-grid">
+            <!-- Main featured image (takes full width on mobile) -->
+            <div class="photo-item featured" onclick="openPhotoModal(1)">
+                <img src="images/1.png" alt="Couple photo 1">
+            </div>
+            
+            <!-- Two images side by side -->
+            <div class="photo-item small" onclick="openPhotoModal(2)">
+                <img src="images/2.png" alt="Couple photo 2">
+            </div>
+            <div class="photo-item small" onclick="openPhotoModal(3)">
+                <img src="images/3.png" alt="Couple photo 3">
+            </div>
+            
+            <!-- Medium sized image -->
+            <div class="photo-item medium" onclick="openPhotoModal(4)">
+                <img src="images/4.png" alt="Couple photo 4">
+            </div>
+            
+            <!-- Two more images side by side -->
+            <div class="photo-item small" onclick="openPhotoModal(5)">
+                <img src="images/5.png" alt="Couple photo 5">
+            </div>
+            <div class="photo-item small" onclick="openPhotoModal(6)">
+                <img src="images/6.png" alt="Couple photo 6">
             </div>
         </div>
     </div>
+</section>
+
+<!-- Updated Photo Modal Slideshow for 6 images -->
+<div class="modal photo-modal" id="photoModal">
+    <div class="modal-content photo-modal-content">
+        <button class="close-modal" onclick="closePhotoModal()">&times;</button>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/1.png" alt="Couple photo 1" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/2.png" alt="Couple photo 2" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/3.png" alt="Couple photo 3" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/4.png" alt="Couple photo 4" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="images/5.png" alt="Couple photo 5" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="images/6.png" alt="Couple photo 6" style="width:100%">
+            </div>
+
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <!-- Navigation dots -->
+            <div class="dots-container" style="text-align:center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Wedding Gift Section -->
     <section class="section" id="gift">
@@ -337,8 +355,11 @@
     </section>
 
     <!-- Link to external JavaScript files with updated paths -->
-    <script src="js/script.js"></script>
-    <script src="js/wedding-additional-js.js"></script>
+    <script src="js/modules/thai-module.js"></script>
+    <script src="js/modules/photo-module.js"></script>
+    <script src="js/modules/modal-module.js"></script>
+    <script src="js/modules/additional-effects.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
