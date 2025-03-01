@@ -84,6 +84,7 @@ const PhotoModule = (function() {
     // Move to next/previous slide
     function plusSlides(n) {
         showSlides(slideIndex += n);
+        console.log(n);
     }
 
     // Show specific slide
@@ -158,11 +159,11 @@ const PhotoModule = (function() {
         const closeButtons = document.querySelectorAll('.close-modal');
         
         prevButtons.forEach(btn => {
-            btn.addEventListener('click', () => plusSlides(-1));
+            // btn.addEventListener('click', () => plusSlides(-1));
         });
         
         nextButtons.forEach(btn => {
-            btn.addEventListener('click', () => plusSlides(1));
+            // btn.addEventListener('click', () => plusSlides(1));
         });
         
         dots.forEach((dot, index) => {
