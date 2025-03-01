@@ -54,3 +54,20 @@ const AnimationModule = (function() {
         observer: observer
     };
 })();
+// Add this to main.js or create a new file and include it in your HTML
+
+// Function to handle dynamic viewport height
+function adjustHeroHeight() {
+    // Get the actual viewport height
+    const vh = window.innerHeight * 0.01;
+    
+    // Set the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
+  // Run once on initial load
+  adjustHeroHeight();
+  
+  // Run on resize and orientation change
+  window.addEventListener('resize', adjustHeroHeight);
+  window.addEventListener('orientationchange', adjustHeroHeight);

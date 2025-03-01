@@ -2,17 +2,17 @@
 
 /* Hero section styles */
 .hero {
-    height: 100%;   /* Changed from 100vh to 100% */
-    min-height: 100vh; /* Added min-height to maintain the same appearance */
+    height: 100vh; /* Fallback for browsers */
+    height: 100dvh; /* Dynamic viewport height (modern browsers) */
+    /* Fallback for browsers that don't support dvh */
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
     margin-bottom: 0;
-    /* Make sure all content is visible within the viewport */
-    max-height: 100vh;
 }
 
 .hero img {
@@ -34,8 +34,11 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    /* Move content up by adjusting margin-top or transform */
-    transform: translateY(-50px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Update font for "Pupay & Frej" to use BrittanySignature */
@@ -147,17 +150,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: auto;
-        min-height: 90vh; /* Slightly reduced to ensure heading visibility */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Distribute space between content and heading */
-    }
-    
-    .hero-content {
-        transform: translateY(0); /* Remove negative transform that was pushing content up */
-        padding-top: 15vh; /* Add padding at top instead */
-        padding-bottom: 50px; /* Add space at bottom */
+        height: 100dvh; /* Dynamic viewport height for mobile */
     }
     
     .hero-content h1 {
@@ -166,12 +159,13 @@
 
     .hero-content p {
         font-size: 1.5rem;
+        margin-top: 5%; /* Reduced from 10% to save space */
     }
 
     .hero-heading h2 {
         font-size: 1.3rem;
-        margin: 0.5rem 0; /* Adjust margins to ensure visibility */
-        padding: 0.5rem; /* Add padding for better touch targets */
+        margin: 0.5rem 0;
+        padding: 0.5rem;
     }
 
     .hero-heading p {
@@ -180,17 +174,16 @@
 }
 
 @media (max-width: 380px) {
-    .hero-content {
-        transform: translateY(-110px);
-    }
-    
     .hero-content h1 {
         font-size: 3rem;
     }
-    .hero-heading h2 {
-        font-size: 1.2rem;
-    }
+    
     .hero-content p {
+        font-size: 1.2rem;
+        margin-top: 3%;
+    }
+    
+    .hero-heading h2 {
         font-size: 1.2rem;
     }
 }
