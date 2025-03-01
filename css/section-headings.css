@@ -1,0 +1,57 @@
+/* section-headings.css - Styling for section headings and titles */
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: #4a471e; 
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.parents-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.parents-subtitle {
+    margin: 2rem 0;
+}
+
+.location-venue {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #4a471e;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.location-building {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: #4a471e;
+    text-align: center;
+}
+
+.location-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -26,45 +23,9 @@
     <link rel="stylesheet" href="css/content-sections.css">
     <link rel="stylesheet" href="css/buttons-modals.css">
     <link rel="stylesheet" href="css/animations.css">
-    
-    <style>
-        /* Load BrittanySignature font */
-        @font-face {
-            font-family: 'BrittanySignature';
-            src: url('fonts/BrittanySignature.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        /* Set default font for all elements to Montserrat */
-        body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-        
-        /* Override for Thai text - use Kanit */
-        [lang="th"], .th {
-            font-family: 'Kanit', sans-serif !important;
-        }
-        
-        /* UPDATED: Override to set specific fonts for different elements */
-        /* Only h1 in hero-content uses BrittanySignature */
-        .hero-content h1 {
-            font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
-        }
-        
-        /* CHANGED: p in hero-content now uses Montserrat */
-        .hero-content p {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-        
-        /* Keep other elements with romantic styling using BrittanySignature */
-        .romantic-text,
-        .message-text {
-            font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="css/section-headings.css">
+    <link rel="stylesheet" href="css/couples-section.css">
+    <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
     <!-- Decorative Elements -->
@@ -82,8 +43,7 @@
         <div class="hero-content">
             <h1>Pupay & Frej</h1>
             <p>Are getting married!</p>
-            <svg viewBox="0 0 24 24" class="heart-icon"
-                style="width: 40px; height: 40px; margin: 1rem auto; fill: #ae6070;">
+            <svg viewBox="0 0 24 24" class="heart-icon">
                 <path
                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
@@ -109,35 +69,32 @@
     <section class="section" id="parents">
         <div class="container">
             <div class="parents-section">
-                <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase;">On Behalf Of</h2>
-                <div style="margin: 2rem 0;">
+                <h2 class="parents-title">On Behalf Of</h2>
+                <div class="parents-subtitle">
                     <h3>Bride's Parents</h3>
-                    <p style="font-size: 1.5rem;">คุณพ่อสุจินต์ จันทร์ศรี</p>
-                    <p style="font-size: 1.5rem;">คุณแม่ฉัตรชนก จันทร์ศรี</p>
+                    <p>คุณพ่อสุจินต์ จันทร์ศรี</p>
+                    <p>คุณแม่ฉัตรชนก จันทร์ศรี</p>
                 </div>
                 <p class="romantic-text">
                     ขอเรียนเชิญท่านร่วมเป็นเกียรติในงานมงคลสมรสระหว่าง
                 </p>
                 <!-- Add bride and groom names in Thai with pictures -->
-                <div
-                    style="display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; flex-wrap: nowrap; gap: 0.5rem; max-width: 100%;">
-                    <div style="text-align: center; flex-shrink: 1; min-width: 0;">
-                        <img src="images/bride.png" alt="Anya"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                            <p style="font-size: 1.6rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Anya Chansri</p>
-                            <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">อัญญา จันทร์ศรี (ปูเป้)</p>
+                <div class="couple-container">
+                    <div class="couple-profile">
+                        <img src="images/bride.png" alt="Anya">
+                        <p class="couple-name">Anya Chansri</p>
+                        <p class="couple-thai-name">อัญญา จันทร์ศรี (ปูเป้)</p>
                     </div>
-                    <div style="display: flex; align-items: center; color: #ae6070; margin: 0 0.25rem; flex-shrink: 0;">
-                        <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #ae6070;">
+                    <div class="heart-separator">
+                        <svg viewBox="0 0 24 24">
                             <path
                                 d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                     </div>
-                    <div style="text-align: center; flex-shrink: 1; min-width: 0;">
-                        <img src="images/groom.png" alt="Frej"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ae6070; margin-bottom: 0.5rem; max-width: 100%;">
-                            <p style="font-size: 1.6rem; color: #a18b42; word-break: break-word; font-family: 'BrittanySignature' !important;">Frej Thorling</p>
-                            <p style="font-size: 1rem; color: #4a471e; word-break: break-word;">เฟรย์ ธอร์ลิง</p>
+                    <div class="couple-profile">
+                        <img src="images/groom.png" alt="Frej">
+                        <p class="couple-name">Frej Thorling</p>
+                        <p class="couple-thai-name">เฟรย์ ธอร์ลิง</p>
                     </div>
                 </div>
             </div>
@@ -146,7 +103,7 @@
 
     <section class="section" id="schedule">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 1.7rem; text-transform: uppercase;">SCHEDULE OF EVENTS</h2>
+            <h2>Schedule Of Events</h2>
             <div class="gift-title-container">
                 <span class="gift-title-text">กำหนดการ</span>
             </div>
@@ -154,9 +111,9 @@
                 <div class="schedule-icon">
                     <img src="images/chair.png" height="48px"/>
                 </div>
-                <div style="min-width: 0; flex: 1; overflow: hidden;">
-                    <h3 style="color: #4a471e">08.09</h3>
-                    <span style="display: block; color: #a18b42;"> พิธีสงฆ์</span>
+                <div>
+                    <h3>08.09</h3>
+                    <span>พิธีสงฆ์</span>
                 </div>
             </div>
     
@@ -164,9 +121,9 @@
                 <div class="schedule-icon">
                     <img src="images/cake.png" height="48px"/>
                 </div>
-                <div style="min-width: 0; flex: 1; overflow: hidden;">
-                    <h3 style="color: #4a471e">09.09</h3>
-                    <span style="display: block; color: #a18b42;">พิธีสู่ขอ</span>
+                <div>
+                    <h3>09.09</h3>
+                    <span>พิธีสู่ขอ</span>
                 </div>
             </div>
     
@@ -174,9 +131,9 @@
                 <div class="schedule-icon">
                     <img src="images/seashell.png" height="48px"/>
                 </div>
-                <div style="min-width: 0; flex: 1; overflow: hidden;">
-                    <h3 style="color: #4a471e">10.00</h3>
-                    <span style="display: block; color: #a18b42;">พิธีหลั่งน้ำพระพุทธมนต์</span>
+                <div>
+                    <h3>10.00</h3>
+                    <span>พิธีหลั่งน้ำพระพุทธมนต์</span>
                 </div>
             </div>
             
@@ -184,114 +141,113 @@
                 <div class="schedule-icon">
                     <img src="images/plate.png" height="48px"/>
                 </div>
-                <div style="min-width: 0; flex: 1; overflow: hidden;">
-                    <h3 style="color: #4a471e">11.00</h3>
-                    <span style="display: block; color: #a18b42;">ร่วมรับประทานอาหาร</span>
+                <div>
+                    <h3>11.00</h3>
+                    <span>ร่วมรับประทานอาหาร</span>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Mobile-First Photo Grid Section with 6 images -->
-<section class="section" id="photos">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem; text-transform: uppercase;">OUR PHOTOS</h2>
-        <div class="photo-grid">
-            <!-- Main featured image (takes full width on mobile) -->
-            <div class="photo-item featured" onclick="openPhotoModal(1)">
-                <img src="images/1.png" alt="Couple photo 1">
+    <!-- Mobile-First Photo Grid Section with 6 images -->
+    <section class="section" id="photos">
+        <div class="container">
+            <h2>Our Photos</h2>
+            <div class="photo-grid">
+                <!-- Main featured image (takes full width on mobile) -->
+                <div class="photo-item featured" onclick="openPhotoModal(1)">
+                    <img src="images/1.png" alt="Couple photo 1">
+                </div>
+                
+                <!-- Two images side by side -->
+                <div class="photo-item small" onclick="openPhotoModal(2)">
+                    <img src="images/2.png" alt="Couple photo 2">
+                </div>
+                <div class="photo-item small" onclick="openPhotoModal(3)">
+                    <img src="images/3.png" alt="Couple photo 3">
+                </div>
+                
+                <!-- Medium sized image -->
+                <div class="photo-item medium" onclick="openPhotoModal(4)">
+                    <img src="images/4.png" alt="Couple photo 4">
+                </div>
+                
+                <!-- Two more images side by side -->
+                <div class="photo-item small" onclick="openPhotoModal(5)">
+                    <img src="images/5.png" alt="Couple photo 5">
+                </div>
+                <div class="photo-item small" onclick="openPhotoModal(6)">
+                    <img src="images/6.png" alt="Couple photo 6">
+                </div>
             </div>
-            
-            <!-- Two images side by side -->
-            <div class="photo-item small" onclick="openPhotoModal(2)">
-                <img src="images/2.png" alt="Couple photo 2">
-            </div>
-            <div class="photo-item small" onclick="openPhotoModal(3)">
-                <img src="images/3.png" alt="Couple photo 3">
-            </div>
-            
-            <!-- Medium sized image -->
-            <div class="photo-item medium" onclick="openPhotoModal(4)">
-                <img src="images/4.png" alt="Couple photo 4">
-            </div>
-            
-            <!-- Two more images side by side -->
-            <div class="photo-item small" onclick="openPhotoModal(5)">
-                <img src="images/5.png" alt="Couple photo 5">
-            </div>
-            <div class="photo-item small" onclick="openPhotoModal(6)">
-                <img src="images/6.png" alt="Couple photo 6">
+        </div>
+    </section>
+
+    <!-- Updated Photo Modal Slideshow for 6 images -->
+    <div class="modal photo-modal" id="photoModal">
+        <div class="modal-content photo-modal-content">
+            <button class="close-modal" onclick="closePhotoModal()">&times;</button>
+
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/1.png" alt="Couple photo 1" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/2.png" alt="Couple photo 2" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/3.png" alt="Couple photo 3" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/4.png" alt="Couple photo 4" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="images/5.png" alt="Couple photo 5" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="images/6.png" alt="Couple photo 6" style="width:100%">
+                </div>
+
+                <!-- Navigation arrows -->
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <!-- Navigation dots -->
+                <div class="dots-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Updated Photo Modal Slideshow for 6 images -->
-<div class="modal photo-modal" id="photoModal">
-    <div class="modal-content photo-modal-content">
-        <button class="close-modal" onclick="closePhotoModal()">&times;</button>
-
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="images/1.png" alt="Couple photo 1" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="images/2.png" alt="Couple photo 2" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="images/3.png" alt="Couple photo 3" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="images/4.png" alt="Couple photo 4" style="width:100%">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="images/5.png" alt="Couple photo 5" style="width:100%">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="images/6.png" alt="Couple photo 6" style="width:100%">
-            </div>
-
-            <!-- Navigation arrows -->
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-
-            <!-- Navigation dots -->
-            <div class="dots-container" style="text-align:center;">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
-            </div>
-        </div>
-    </div>
-</div>
 
     <!-- Wedding Gift Section -->
     <section class="section" id="gift">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <img src="images/gift-box.png" alt="Gift Box" style="width: 150px; height: auto;">
+            <div class="gift-box-container">
+                <img src="images/gift-box.png" alt="Gift Box" class="gift-box-image">
             </div>
 
-            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.2rem; text-transform: uppercase;">WEDDING
-                GIFT</h2>
+            <h2>Wedding Gift</h2>
 
             <div class="gift-title-container">
                 <span class="gift-title-text">ส่งของขวัญให้คู่บ่าวสาว</span>
             </div>
 
-            <p style="text-align: center; margin-bottom: 1.5rem;">
+            <p class="gift-message">
                 ร่วมแสดงความยินดีและส่งมอบของขวัญให้คู่บ่าวสาว เนื่องในโอกาสพิเศษ ผ่านช่องทาง QR นี้
             </p>
             <button class="gift-button" onclick="openGiftModal()">QR CODE : ส่งของขวัญ</button>
-            <p style="text-align: center; margin-top: 1.5rem; font-style: italic; color: #ae6070;">
+            <p class="thank-you-message">
                 … ขอขอบคุณทุกท่านที่ร่วมเป็นส่วนหนึ่งในวันสำคัญของเรา …
             </p>
         </div>
@@ -306,7 +262,7 @@
                 <div class="qr-container">
                     <img src="images/qr.jpg" alt="Gift QR Code" class="qr-code">
                 </div>
-                <p style="color: #ae6070; font-family: 'Italianno', cursive; font-size: 1.8rem;">
+                <p class="gift-thank-you">
                     ขอขอบคุณในความปรารถนาดี
                 </p>
             </div>
@@ -317,8 +273,7 @@
     <section class="section" id="rsvp">
         <div class="container">
             <div class="rsvp-section">
-                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.2rem; text-transform: uppercase;">
-                    R.S.V.P</h2>
+                <h2>R.S.V.P</h2>
 
                 <div class="gift-title-container">
                     <span class="gift-title-text">ตอบรับเข้าร่วมงาน</span>
@@ -338,17 +293,14 @@
 
     <section class="section" id="location">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem; text-transform: uppercase;">
-                LOCATION</h2>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <p
-                    style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #4a471e; margin-bottom: 0.5rem;">
-                    ณ ร้านธรรมชาติโอชา จ.นนทบุรี</p>
-                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #4a471e;">อาคารร่ำรวย</p>
+            <h2>Location</h2>
+            <div class="location-container">
+                <p class="location-venue">ณ ร้านธรรมชาติโอชา จ.นนทบุรี</p>
+                <p class="location-building">อาคารร่ำรวย</p>
             </div>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4237.791905368747!2d100.39482509999999!3d13.805823000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e290df7b17b061%3A0xf504b3b3b7bfcd3f!2sThammachadocha!5e1!3m2!1ssv!2sth!4v1740312404617!5m2!1ssv!2sth"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                width="600" height="450" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>

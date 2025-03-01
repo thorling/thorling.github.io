@@ -1,0 +1,55 @@
+/* component-styles.css - Styling for various components and elements */
+
+/* Gift box styling */
+.gift-box-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.gift-box-image {
+    width: 150px;
+    height: auto;
+}
+
+/* Thank you message styling */
+.thank-you-message {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #ae6070;
+}
+
+/* RSVP section text */
+.rsvp-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Gift message */
+.gift-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Italianno text styling in gift modal */
+.gift-thank-you {
+    color: #ae6070;
+    font-family: 'Italianno', cursive;
+    font-size: 1.8rem;
+}
+
+/* General center alignment for text paragraphs */
+.text-center {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gift-box-image {
+        width: 120px;
+    }
+    
+    .gift-thank-you {
+        font-size: 1.5rem;
+    }
+}

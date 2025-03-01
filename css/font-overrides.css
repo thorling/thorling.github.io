@@ -1,0 +1,28 @@
+/* font-overrides.css - Font family overrides and custom font loading */
+
+/* Load BrittanySignature font */
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('fonts/BrittanySignature.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Set default font for all elements to Montserrat */
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, select, textarea {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Override for Thai text - use Kanit */
+[lang="th"], .th {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+/* UPDATED: Override to set specific fonts for different elements */
+/* Only h1 in hero-content uses BrittanySignature */
+.hero-content h1 {
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+}
+
+/* CHANGED: p in hero-content now

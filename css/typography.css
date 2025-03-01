@@ -44,12 +44,20 @@ textarea {
     line-height: 1.2;
 }
 
+.hero-content h1 span {
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
 .hero-content p {
-    font-family: 'BrittanySignature', 'Italianno', cursive !important;
-    font-size: 3rem;
-    margin-top: 0.5rem;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 2rem;
+    margin-top: 10%;
     line-height: 1.2;
     color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 /* Other typography specifics */
@@ -63,12 +71,31 @@ h2 {
 h3 {
     font-weight: 500;
     color: #4a471e;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-item h3 {
+    color: #4a471e;
+}
+
+.schedule-item span {
+    display: block;
+    color: #a18b42;
 }
 
 p {
     color: #a18b42;
     margin-bottom: 0.5rem;
 }
+
+.parents-section p {
+    font-size: 0.9rem;
+}
+
+.couple-thai-name p{
+    font-size: 1rem;
+    }
 
 /* Additional style classes */
 .date-time {
@@ -77,14 +104,14 @@ p {
 }
 
 .romantic-text {
-    font-family: 'BrittanySignature', 'Italianno', cursive !important;
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
     font-size: 2rem;
     color: #ae6070;
     line-height: 1.2;
 }
 
 .message-text {
-    font-family: 'BrittanySignature', 'Italianno', cursive !important;
+    font-family: 'BrittanySignature', 'Great Vibes', cursive !important;
     font-size: 3rem;
     color: #ae6070;
     line-height: 1.2;
@@ -105,7 +132,8 @@ p {
     }
 
     .hero-content p {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-top: 5%;
     }
 
     .romantic-text {
@@ -115,6 +143,11 @@ p {
     .message-text {
         font-size: 2.5rem;
     }
+    
+    .hero-heading h2 {
+        font-size: 1.3rem;
+        margin: 0.5rem 0;
+    }
 }
 
 @media (max-width: 380px) {
@@ -123,10 +156,11 @@ p {
     }
 
     .hero-content p {
-        font-size: 2.2rem;
+        font-size: 1.2rem;
+        margin-top: 3%;
     }
-
-    h2 {
-        font-size: 2.2rem;
+    
+    .hero-heading h2 {
+        font-size: 1.2rem;
     }
 }

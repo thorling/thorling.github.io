@@ -79,7 +79,7 @@
 .schedule-item {
   display: flex;
   align-items: flex-start;
-  width: 100%;
+  width: 75%;
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.8);
@@ -121,6 +121,10 @@
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
+}
+
+.schedule-item div{
+  line-height: 1.5;
 }
 
 /* Fix for mobile view */

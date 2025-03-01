@@ -39,6 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    bottom: 15%;
 }
 
 /* Update font for "Pupay & Frej" to use BrittanySignature */
@@ -92,14 +93,12 @@
     backdrop-filter: blur(5px);
     box-shadow: none; /* Remove the box-shadow that creates the border effect */
     /* Ensure consistent display across devices */
-    padding: 10px 0;
 }
 
 .hero-heading h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     color: white;
-    margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -163,9 +162,7 @@
     }
 
     .hero-heading h2 {
-        font-size: 1.3rem;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
+        font-size: 1.6rem;
     }
 
     .hero-heading p {
@@ -179,7 +176,7 @@
     }
     
     .hero-content p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-top: 3%;
     }
     
