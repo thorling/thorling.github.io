@@ -52,7 +52,7 @@ p.couple-thai-name {
     fill: #ae6070;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     p.couple-thai-name {
         font-size: 0.8rem;
     }
