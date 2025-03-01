@@ -63,46 +63,76 @@
     animation-delay: 0.8s;
     opacity: 0;
   }
-  
-  /* Schedule section styles */
+/* More aggressive fix for schedule-item width and padding issues */
+
+/* First, ensure the container has proper width */
+#schedule .container {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent any children from creating horizontal scroll */
+}
+
+/* Reset and fix the schedule-item styles */
+.schedule-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  /* Force-constrain width to prevent overflow */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Adjust the icon to have fixed dimensions */
+.schedule-icon {
+  flex: 0 0 48px;
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure text container is properly constrained */
+.schedule-item > div:nth-child(2) {
+  flex: 1;
+  min-width: 0; /* Critical for text overflow */
+  max-width: calc(100% - 60px); /* Account for icon width + margin */
+  width: auto;
+  overflow: hidden;
+  padding-right: 0.5rem;
+}
+
+/* Ensure text within schedule items doesn't overflow */
+.schedule-item h3,
+.schedule-item span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix for mobile view */
+@media (max-width: 768px) {
   .schedule-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-lg);
-    background-color: var(--white-transparent);
-    border-radius: var(--border-radius);
+    padding: 0.8rem;
   }
   
   .schedule-icon {
-    width: 60px;
-    min-width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0;
+    margin-right: 0.8rem;
   }
-  
-  .schedule-icon img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
-  .schedule-text {
-    flex: 1;
-  }
-  
-  .schedule-item h3 {
-    font-size: 2rem;
-  }
-  
-  .schedule-item p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 1.5rem;
-  }
+}
   
   /* Parents and RSVP sections have common styles */
   .parents-section,
@@ -280,7 +310,7 @@
   
   /* Media Queries */
   @media (max-width: 768px) {
-    .schedule-item {
+    /* .schedule-item {
       padding: 1.2rem;
       margin-bottom: 1.2rem;
     }
@@ -289,7 +319,7 @@
       width: 50px;
       min-width: 50px;
       height: 50px;
-    }
+    } */
     
     .parents-section, 
     .rsvp-section {

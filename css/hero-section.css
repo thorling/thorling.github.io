@@ -2,7 +2,7 @@
 
 /* Hero section styles */
 .hero {
-    height: 100vh;
+    height: calc(100vh - 45px);
     width: 100%;
     position: relative;
     display: flex;
