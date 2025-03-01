@@ -2,7 +2,8 @@
 
 /* Hero section styles */
 .hero {
-    height: calc(100vh - 45px);
+    height: 100%;   /* Changed from 100vh to 100% */
+    min-height: 100vh; /* Added min-height to maintain the same appearance */
     width: 100%;
     position: relative;
     display: flex;
@@ -10,7 +11,6 @@
     justify-content: center;
     overflow: hidden;
     margin-bottom: 0;
-
 }
 
 .hero img {
