@@ -24,6 +24,26 @@
     object-fit: cover;
 }
 
+/* Show mobile image by default, hide desktop image */
+.mobile-hero-image {
+    display: block;
+}
+
+.desktop-hero-image {
+    display: none;
+}
+
+/* For desktop screens, show desktop image and hide mobile image */
+@media (min-width: 769px) {
+    .mobile-hero-image {
+        display: none;
+    }
+    
+    .desktop-hero-image {
+        display: block;
+    }
+}
+
 .hero-content {
     position: relative;
     text-align: center;
@@ -122,11 +142,7 @@
 /* Responsive adjustments */
 @media (min-width: 1200px) {
     .hero {
-        max-width: 1200px;
         margin: 0 auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        height: 90vh; /* Slightly shorter for better desktop experience */
     }
     
     .hero img {
@@ -134,8 +150,8 @@
     }
 
     .hero-heading {
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
+        /* border-bottom-left-radius: 8px; */
+        /* border-bottom-right-radius: 8px; */
         padding: 1.5rem 0;
     }
     
@@ -159,10 +175,7 @@
 
 @media (min-width: 769px) and (max-width: 1199px) {
     .hero {
-        max-width: 90%;
         margin: 0 auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
         height: 85vh;
     }
     

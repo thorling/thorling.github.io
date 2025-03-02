@@ -39,11 +39,9 @@
 /* Enhanced message section for desktop */
 @media (min-width: 992px) {
   .message-section {
-    max-width: 1200px;
     margin: 0 auto;
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 2rem var(--spacing-md);
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
   }
 }
 
@@ -86,7 +84,7 @@
 /* Larger save-date-text for desktop */
 @media (min-width: 992px) {
   .save-date-text {
-    font-size: 3.5rem;
+    font-size: 2rem;
     padding: 0 25px;
   }
   
@@ -110,7 +108,7 @@ overflow: hidden; /* Prevent any children from creating horizontal scroll */
 /* Desktop improvements for schedule section */
 @media (min-width: 992px) {
 #schedule .container {
-  max-width: 60rem;
+  max-width: 35rem;
 }
 
 #schedule .schedule-items-container {
@@ -235,9 +233,7 @@ font-family: 'Kanit', sans-serif !important;
     padding: 3rem;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -455,4 +451,10 @@ font-family: 'Kanit', sans-serif !important;
     font-size: 2rem;
     padding: 0 10px;
   }
+}
+
+@media (min-width: 1200px) {
+  .hero-heading, .message-section {
+    z-index: 0;
+}
 }
